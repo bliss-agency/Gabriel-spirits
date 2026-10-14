@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Talisman Tequila Añejo</title>
+<meta name="description" content="Talisman Tequila Añejo by Tristan Tate: tequila premium 100% agave di Jalisco, 40% vol, 700 ml. Sviluppata e distribuita in Italia da Gabriel &amp; Spirits Group da metà novembre 2026.">
+<meta property="og:title" content="Talisman Tequila Añejo | Gabriel &amp; Spirits">
+<meta property="og:description" content="Tequila premium 100% agave di Jalisco. In Italia da metà novembre 2026.">
+<meta property="og:image" content="assets/og.webp">
+<link rel="icon" href="assets/gs_logo.webp">
+<meta property="og:type" content="product">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Talisman Tequila Añejo",
+  "description": "Tequila Añejo 100% puro de agave, 40% vol, 700 ml. Prodotta a El Arenal, Jalisco.",
+  "image": "assets/og.webp",
+  "category": "Tequila Añejo",
+  "brand": { "@type": "Brand", "name": "Talisman Tequila" },
+  "manufacturer": { "@type": "Organization", "name": "Compañía Tequilera Don Cayo" },
+  "countryOfOrigin": "MX",
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Gradazione alcolica", "value": "40% vol" },
+    { "@type": "PropertyValue", "name": "Formato", "value": "700 ml" },
+    { "@type": "PropertyValue", "name": "NOM", "value": "1649" }
+  ],
+  "offers": { "@type": "Offer", "url": "https://tequilatalisman.com", "seller": { "@type": "Organization", "name": "Gabriel & Spirits Group" } }
+}
+</script>
+<style>
+/* Layout: header flottante; sequenza Cycles a scroll; processo con foto a serranda; ruota di degustazione; campagna in volo 3D; scheda; rotta USA-Italia; contatti */
+:root{
+  --black:#000; --night:#070605; --line:rgba(214,196,154,.16);
+  --white:#fff; --soft:#e9e4dc; --muted:#a39b8e; --gold:#c9a96a; --gold-hi:#e7cf9c; --amber:#c8702f;
+  --f-head:"Playfair Display",Georgia,"Times New Roman",serif;
+  --f-body:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --gutter:clamp(16px,5vw,80px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;letter-spacing:0}
+html{background:var(--black)}
+body{background:var(--black);color:var(--white);font-family:var(--f-body);font-size:17px;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--gold);outline-offset:3px;border-radius:999px}
+h1,h2,h3{font-family:var(--f-head);font-weight:400;margin:0;line-height:1.12;text-wrap:balance;color:var(--white)}
+h1{font-size:clamp(34px,3.8vw,40px)}
+h2{font-size:clamp(28px,3vw,40px)}
+h3{font-size:22px}
+h2 em,h1 em{font-style:italic;color:var(--gold-hi)}
+p{margin:0}
+.kicker{font-size:13px;font-weight:500;color:var(--gold);text-transform:uppercase}
+
+/* HEADER */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gutter) 14px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;transition:background .4s,backdrop-filter .4s}
+.hdr.solid{background:rgba(0,0,0,.55);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
+.hdr nav{display:flex;align-items:center;gap:6px}
+.hdr nav.right{justify-content:flex-end}
+.hdr nav a{font-size:14px;font-weight:500;text-decoration:none;color:var(--soft);padding:9px 16px;border-radius:999px;transition:background .25s,color .25s}
+.hdr nav a:hover,.hdr nav a:focus-visible{background:rgba(255,255,255,.08);color:var(--white)}
+.hdr nav a[aria-current]{color:var(--gold-hi)}
+.hdr .cta-pill{background:linear-gradient(135deg,#e7cf9c,#b8894a);color:#120d06;padding:10px 22px;box-shadow:0 6px 24px rgba(201,169,106,.25)}
+.hdr .cta-pill:hover,.hdr .cta-pill:focus-visible{background:linear-gradient(135deg,#f3e1b8,#c99a58);color:#000}
+.hdr .logo{display:block;width:210px;height:auto;aspect-ratio:1214/283}
+.burger{display:none;background:rgba(255,255,255,.06);border:0;color:var(--white);width:42px;height:42px;border-radius:50%;cursor:pointer}
+.burger span{display:block;width:16px;height:1.5px;background:currentColor;margin:4px auto;border-radius:2px}
+.drawer{position:fixed;inset:0;z-index:19;background:rgba(0,0,0,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
+.drawer[hidden]{display:none}
+.drawer a{font-family:var(--f-head);font-size:30px;text-decoration:none;color:var(--white);padding:8px 20px;border-radius:999px}
+
+/* CINE */
+.cine{position:relative;height:780vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--black)}
+#seq{position:absolute;inset:0;width:100%;height:100%;display:block}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,0) 34%,rgba(0,0,0,0) 66%,rgba(0,0,0,.72)),linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,0) 16%,rgba(0,0,0,0) 80%,rgba(0,0,0,.75))}
+.bars{position:absolute;left:0;right:0;height:0;background:var(--black);pointer-events:none;transition:height .9s cubic-bezier(.2,.7,.1,1);z-index:1}
+.bars.t{top:0}.bars.b{bottom:0}
+.chapter{position:absolute;z-index:2;max-width:400px;display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(24px);will-change:opacity,transform;text-shadow:0 2px 30px rgba(0,0,0,.9)}
+.chapter p{color:var(--soft)}
+.chapter.l{left:var(--gutter);top:50%;margin-top:-110px}
+.chapter.r{right:var(--gutter);top:50%;margin-top:-110px}
+.chapter.hero{left:var(--gutter);bottom:14vh;top:auto;margin:0;opacity:1;transform:none;max-width:460px}
+.data{display:flex;gap:28px;flex-wrap:wrap}
+.data div{display:flex;flex-direction:column}
+.data b{font-family:var(--f-head);font-weight:400;font-size:26px;color:var(--gold-hi);font-variant-numeric:tabular-nums}
+.data span{font-size:13px;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:999px;background:linear-gradient(135deg,#e7cf9c,#b8894a);color:#120d06;text-decoration:none;font-size:15px;font-weight:500;transition:transform .25s,box-shadow .25s}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,169,106,.3)}
+.btn.ghost{background:rgba(255,255,255,.06);color:var(--white);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+.loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;background:var(--black);transition:opacity 1.2s;flex-direction:column;gap:18px}
+.loading img{width:120px;opacity:.9;animation:breathe 2.4s ease-in-out infinite}
+.loading span{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.loading.done{opacity:0;pointer-events:none}
+@keyframes breathe{50%{opacity:.4}}
+.progress{position:absolute;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));width:min(240px,50vw);transform:translateX(-50%);height:2px;border-radius:2px;background:rgba(255,255,255,.12);z-index:2;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:var(--gold)}
+.scrollcue{position:absolute;right:var(--gutter);bottom:14vh;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);font-size:12px;text-transform:uppercase}
+.scrollcue i{display:block;width:1px;height:56px;background:linear-gradient(var(--gold),transparent);animation:cue 2s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* REVEAL */
+.rv .w{display:inline-block;opacity:.12;transform:translateY(.25em);transition:opacity .9s cubic-bezier(.2,.7,.1,1),transform .9s cubic-bezier(.2,.7,.1,1)}
+.rv.in .w{opacity:1;transform:none}
+
+/* PROCESSO: horizontal film strip */
+.proc{position:relative;height:620vh;background:radial-gradient(80% 60% at 70% 50%,#130d07,#000 70%)}
+.proc .pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#procGL{position:absolute;inset:0;width:100%;height:100%}
+.proc .intro{position:absolute;left:var(--gutter);top:calc(110px + env(safe-area-inset-top,0px));max-width:520px;display:flex;flex-direction:column;gap:12px;z-index:2}
+.proc .intro p{color:var(--muted)}
+.track{position:absolute;left:0;bottom:9vh;display:flex;gap:6vw;padding-left:var(--gutter);z-index:2;will-change:transform}
+.step{width:min(380px,74vw);flex:none;display:flex;flex-direction:column;gap:10px;opacity:.28;transition:opacity .5s}
+.step.on{opacity:1}
+.step .n{font-family:var(--f-head);font-style:italic;font-size:40px;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold)}
+.step p{color:var(--muted);font-size:16px}
+.ticks{position:absolute;left:var(--gutter);right:var(--gutter);bottom:4.5vh;display:flex;gap:6px;z-index:2}
+.ticks i{flex:1;height:2px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden;position:relative}
+.ticks i b{position:absolute;inset:0;background:var(--gold);transform-origin:left;transform:scaleX(0)}
+
+
+.procart{position:absolute;right:var(--gutter);top:calc(13vh + env(safe-area-inset-top,0px));height:60vh;aspect-ratio:4/5;z-index:3}
+.shutter{position:absolute;inset:0;overflow:hidden;border-radius:4px;background:#0b0907;box-shadow:0 40px 120px rgba(0,0,0,.7)}
+.shutter .ly{position:absolute;inset:0}
+.shutter .sl{position:absolute;left:0;right:0;overflow:hidden}
+.shutter .sl i{position:absolute;inset:0;background-repeat:no-repeat;will-change:transform}
+.shutter .sl b{position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.75));opacity:0;pointer-events:none}
+.shutter::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0) 60%,rgba(0,0,0,.45));pointer-events:none}
+.procart figcaption{position:absolute;left:18px;bottom:16px;z-index:2;font-size:13px;color:var(--white);text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.bign{position:absolute;left:-.42em;top:-.36em;z-index:4;font-family:var(--f-head);font-style:italic;font-size:clamp(110px,12vw,190px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(231,207,156,.55);pointer-events:none}
+@media (max-width:900px){.procart{left:50%;right:auto;top:calc(176px + env(safe-area-inset-top,0px));height:38vh;transform:translateX(-50%)}.bign{font-size:84px;left:-.3em}.proc .intro p{display:none}}
+
+/* NOTE: ruota di degustazione (design cliente, font del sito) */
+.notes{position:relative;padding:clamp(96px,9vw,140px) var(--gutter);background:#0d0c0a;overflow:hidden}
+.nwrap{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(40px,6vw,96px)}
+.ncol{flex:1 1 360px;max-width:460px;display:flex;flex-direction:column;gap:28px}
+.ncol .hd{display:flex;flex-direction:column;gap:14px}
+.ncol .hd p{font-size:clamp(16px,1.25vw,18px);line-height:1.6;color:var(--white)}
+.nlist{display:flex;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.14)}
+.nitem{display:grid;grid-template-columns:44px 1fr;align-items:baseline;gap:4px;width:100%;text-align:left;background:transparent;border:0;border-top:1px solid rgba(255,255,255,.14);padding:20px 0;color:var(--white);font-family:inherit;cursor:pointer;border-radius:0}
+.nitem .nn{font-size:13px;font-weight:600;color:rgba(255,255,255,.55);transition:color .3s}
+.nitem .nb{display:flex;flex-direction:column;gap:6px}
+.nitem .nm{font-family:var(--f-head);font-size:24px;line-height:1.15;color:var(--white);transition:color .3s}
+.nitem .nd{font-size:16px;line-height:1.55;color:var(--white)}
+.nitem:hover .nm,.nitem[aria-pressed="true"] .nm,.nitem[aria-pressed="true"] .nn{color:var(--gold)}
+.nseg{display:flex;gap:8px;flex-wrap:wrap}
+.nseg button,.npill{min-height:44px;padding:10px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:transparent;color:var(--white);font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:all .3s}
+.nseg button[aria-pressed="true"],.npill[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#0d0c0a}
+.ndial{flex:1 1 440px;display:flex;justify-content:center;min-width:0}
+.dialbox{position:relative;width:100%;max-width:580px;aspect-ratio:1/1}
+.dialbox svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#nind{transform-origin:280px 280px;transition:transform 1s cubic-bezier(.65,0,.35,1)}
+.nglow{position:absolute;left:50%;top:50%;width:66%;height:66%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(201,164,92,.16) 0%,rgba(201,164,92,0) 68%);transition:background 1s ease;pointer-events:none}
+.nglow.ice{background:radial-gradient(circle,rgba(170,200,225,.14) 0%,rgba(170,200,225,0) 68%)}
+.nill{position:absolute;left:30%;top:27%;width:40%;height:40%;display:none;align-items:center;justify-content:center;pointer-events:none}
+.nill.on{display:flex;animation:talInk 1.5s cubic-bezier(.6,0,.2,1) both}
+.nill img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+@keyframes talInk{from{clip-path:circle(0% at 50% 60%);filter:blur(10px) brightness(1.8);transform:scale(1.06)}to{clip-path:circle(85% at 50% 60%);filter:none;transform:none}}
+.ncap{position:absolute;left:0;right:0;top:79%;display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:none}
+.ncap b{font-family:var(--f-head);font-style:italic;font-weight:400;font-size:22px;color:var(--white);animation:talFade .7s ease both}
+.ncap span{font-size:13px;color:var(--white)}
+@keyframes talFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.npill{position:absolute;transform:translate(-50%,-50%);padding:10px 18px;white-space:nowrap;background:#0d0c0a}
+@media (max-width:640px){.npill{font-size:14px;padding:8px 14px}}
+@media (prefers-reduced-motion:reduce){.nill.on,.ncap b{animation:none}}
+
+/* CAMPAGNA: volo in profondità tra le immagini */
+.camp{position:relative;height:820vh;background:#000}
+.cpin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;perspective:1000px;perspective-origin:50% 50%}
+.cp{position:absolute;left:50%;top:50%;margin:0;will-change:transform,opacity;visibility:hidden;backface-visibility:hidden}
+.cp img{display:block;width:100%;height:auto;border-radius:3px;box-shadow:0 50px 120px rgba(0,0,0,.8)}
+.cp.fin{width:100vw;height:100vh;height:100svh}
+.cp.fin img{width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none}
+.chead{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(560px,calc(100% - 32px));text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;z-index:5;pointer-events:none}
+.chead p{color:var(--white)}
+.cfoot{position:absolute;left:var(--gutter);right:var(--gutter);bottom:calc(28px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;align-items:flex-end;z-index:5;pointer-events:none}
+.cfoot .cnum{font-family:var(--f-head);font-style:italic;font-size:22px;color:var(--gold-hi);font-variant-numeric:tabular-nums}
+.cfoot .cnum small{font-family:var(--f-body);font-style:normal;font-size:13px;color:var(--soft)}
+.cend{position:absolute;left:var(--gutter);bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:6;display:flex;flex-direction:column;gap:16px;max-width:440px;opacity:0;transform:translateY(20px);pointer-events:none;text-shadow:0 2px 24px rgba(0,0,0,.8)}
+.cend p{color:var(--white)}
+.cvig{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(120% 90% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.7))}
+
+/* SCHEDA */
+.spec{padding:140px var(--gutter);background:linear-gradient(#000,#0a0806);display:flex;flex-direction:column;gap:56px}
+.spec .head{max-width:620px;display:flex;flex-direction:column;gap:14px}
+.specgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:56px 40px;perspective:900px}
+.sp{display:flex;flex-direction:column;gap:6px;transform-style:preserve-3d;transition:transform .2s}
+.sp svg{width:36px;height:36px;stroke:var(--gold);fill:none;stroke-width:1.1;margin-bottom:6px}
+.sp b{font-family:var(--f-head);font-weight:400;font-size:34px;color:var(--white);font-variant-numeric:tabular-nums;line-height:1.1}
+.sp span{font-size:14px;color:var(--muted)}
+
+/* ITALIA */
+.route{position:relative;height:300vh;background:#000}
+.route .pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;padding:0 var(--gutter);gap:40px}
+#globeGL{width:100%;aspect-ratio:1/1;max-height:84vh}
+.route .txt{display:flex;flex-direction:column;gap:20px;position:relative;z-index:2}
+.route .txt > p{color:var(--soft)}
+.big{display:flex;gap:40px;flex-wrap:wrap}
+.big div{display:flex;flex-direction:column}
+.big b{font-family:var(--f-head);font-weight:400;font-size:40px;line-height:1.1;color:var(--gold-hi);font-variant-numeric:tabular-nums}
+.big span{font-size:14px;color:var(--muted)}
+
+/* CONTATTI */
+.contact{padding:140px var(--gutter);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end;background:radial-gradient(60% 80% at 80% 100%,#1a1108,#000 70%)}
+.contact .txt{display:flex;flex-direction:column;gap:20px}
+.contact .txt p{color:var(--soft)}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.mail code{font-family:var(--f-head);font-size:28px;color:var(--white);user-select:all}
+.copy{background:rgba(255,255,255,.06);border:0;color:var(--soft);font:inherit;font-size:13px;padding:8px 16px;border-radius:999px;cursor:pointer}
+.copy:hover,.copy:focus-visible{background:rgba(255,255,255,.12);color:var(--white)}
+
+/* FOOTER */
+.ftr{padding:64px var(--gutter) calc(40px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:center;gap:28px;background:#000;border-top:1px solid var(--line);text-align:center}
+.ftr img{width:220px;height:auto}
+.ftr nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px}
+.ftr nav a{font-size:14px;text-decoration:none;color:var(--soft);padding:8px 16px;border-radius:999px}
+.ftr nav a:hover{background:rgba(255,255,255,.08)}
+.ftr small{font-size:13px;color:var(--muted)}
+
+@media (max-width:900px){
+  body{font-size:16px}
+  .hdr{grid-template-columns:auto 1fr auto}
+  .hdr nav.left a,.hdr nav.right a:not(.cta-pill){display:none}
+  .burger{display:block}
+  .hdr .logo{width:150px;margin:0 auto}
+  .hdr .cta-pill{padding:9px 16px;font-size:13px}
+  .chapter,.chapter.l,.chapter.r,.chapter.hero{left:16px;right:16px;top:auto;bottom:calc(64px + env(safe-area-inset-bottom,0px));margin:0;max-width:none}
+  .scrollcue{display:none}
+  .data b{font-size:22px}
+  .route .pin,.contact{grid-template-columns:minmax(0,1fr)}
+  .notes{padding:96px 16px}
+  .route .pin{padding:90px 16px 40px;align-content:center;gap:10px}
+  #globeGL{max-height:42vh}
+  .specgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 24px}
+  .sp b{font-size:28px}
+  .spec,.contact{padding:100px 16px}
+  .mail code{font-size:22px}
+  .big b{font-size:32px}
+  .proc .intro{top:calc(90px + env(safe-area-inset-top,0px))}
+}
+@media (prefers-reduced-motion:reduce){.scrollcue i,.loading img{animation:none}.rv .w{opacity:1;transform:none}}
+</style>
+
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <nav class="left" aria-label="Menu principale">
+    <button class="burger" id="burger" type="button" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span></button>
+    <a href="https://www.gabriel-spirits.com/it">Home</a>
+    <a href="https://www.gabriel-spirits.com/it/brands" aria-current="page">Brands</a>
+    <a href="https://www.gabriel-spirits.com/it">La storia</a>
+  </nav>
+  <a href="https://www.gabriel-spirits.com/it" aria-label="Gabriel &amp; Spirits, home"><img class="logo" src="assets/gs_logo.webp" width="210" height="49" alt="Gabriel &amp; Spirits"></a>
+  <nav class="right" aria-label="Menu secondario">
+    <a href="https://www.gabriel-spirits.com/it">Team</a>
+    <a href="https://tequilatalisman.com" target="_blank" rel="noopener">Negozio</a>
+    <a class="cta-pill" href="#contatti">Contatti</a>
+  </nav>
+</header>
+<div class="drawer" id="drawer" hidden>
+  <a href="https://www.gabriel-spirits.com/it">Home</a>
+  <a href="https://www.gabriel-spirits.com/it/brands">Brands</a>
+  <a href="https://www.gabriel-spirits.com/it">La storia</a>
+  <a href="https://www.gabriel-spirits.com/it">Team</a>
+  <a href="https://tequilatalisman.com" target="_blank" rel="noopener">Negozio</a>
+  <a href="#contatti">Contatti</a>
+</div>
+
+<main>
+  <div class="cine" id="cine">
+    <div class="stage">
+      <canvas id="seq" aria-hidden="true"></canvas>
+      <div class="shade"></div>
+      <div class="bars t" id="barT"></div><div class="bars b" id="barB"></div>
+      <div class="loading" id="loading"><img src="assets/gs_logo.webp" alt=""><span id="ldtxt">0%</span></div>
+
+      <article class="chapter hero" data-in="0" data-out="0.09">
+        <span class="kicker">Talisman Tequila by Tristan Tate</span>
+        <h1>Talisman Tequila <em>Añejo</em></h1>
+        <p>Tequila premium 100% agave di Jalisco, sviluppata da Gabriel &amp; Spirits. Qualità del prodotto, posizionamento contemporaneo e una presenza pensata per i mercati internazionali.</p>
+        <div class="cta">
+          <a class="btn" href="https://tequilatalisman.com" target="_blank" rel="noopener">Acquista</a>
+          <a class="btn ghost" href="#contatti">Distribuzione</a>
+        </div>
+      </article>
+      <article class="chapter r" data-in="0.19" data-out="0.31">
+        <span class="kicker">Il vetro</span>
+        <h2>Vetro <em>rigato</em></h2>
+        <p>Una bottiglia piatta, con fondo spesso e scanalature verticali a passo di 2 mm sul fronte e sul retro. Il distillato ambrato attraversa le rigature e cambia luce a ogni rotazione.</p>
+        <div class="data"><div><b>142,6 mm</b><span>Larghezza</span></div><div><b>61,6 mm</b><span>Profondità</span></div><div><b>156 mm</b><span>Altezza vetro</span></div></div>
+      </article>
+      <article class="chapter l" data-in="0.37" data-out="0.48">
+        <span class="kicker">L'etichetta</span>
+        <h2>Lamina rosa oro <em>a rilievo</em></h2>
+        <p>Lo scudo nero porta l'agave stilizzata, il nome Talisman e la firma Tristan Tate in lamina rosa oro sollevata. La luce scorre sui bordi dei fregi e accende ogni lettera.</p>
+      </article>
+      <article class="chapter r" data-in="0.57" data-out="0.69">
+        <span class="kicker">La chiusura</span>
+        <h2>Tappo <em>cesellato</em></h2>
+        <p>Una testa in metallo dorato con volute a rilievo, montata su un collo in sughero naturale.</p>
+        <div class="data"><div><b>57,6 mm</b><span>Diametro</span></div><div><b>38,2 mm</b><span>Altezza</span></div></div>
+      </article>
+      <article class="chapter l" data-in="0.79" data-out="0.89">
+        <span class="kicker">Il retro</span>
+        <h2>Receta <em>de Origen</em></h2>
+        <p>Prodotta e imbottigliata dalla Compañía Tequilera Don Cayo a El Arenal, Jalisco, sotto la guida del maestro tequilero Don Cayo. Ogni bottiglia riporta la NOM 1649 e la denominazione di origine protetta.</p>
+      </article>
+      <article class="chapter l" data-in="0.94" data-out="1.1">
+        <span class="kicker">Italia, metà novembre 2026</span>
+        <h2>Arrivo <em>in Italia</em></h2>
+        <p>Talisman arriva in Italia insieme a Platinum Tequila, primo passo dell'espansione europea di Gabriel &amp; Spirits Group.</p>
+        <div class="cta"><a class="btn" href="https://tequilatalisman.com" target="_blank" rel="noopener">Acquista</a><a class="btn ghost" href="#contatti">Diventa partner</a></div>
+      </article>
+      <div class="scrollcue" id="cue"><i></i>Scorri</div>
+      <div class="progress"><i id="bar"></i></div>
+    </div>
+  </div>
+
+  <section class="proc" id="processo" aria-labelledby="proc-t">
+    <div class="pin">
+      <figure class="procart" id="procart" style="margin:0"><span class="bign" id="bign" aria-hidden="true">01</span><div class="shutter" id="shutter" role="img" aria-label="Fotografie delle nove fasi del processo produttivo"></div></figure>
+      <div class="intro">
+        <span class="kicker">Processo produttivo</span>
+        <h2 id="proc-t" class="rv">Dall'agave <em>alla bottiglia</em></h2>
+        <p>Nove fasi, dalla piantagione di Jalisco all'imbottigliamento.</p>
+      </div>
+      <ol class="track" id="track" style="list-style:none;margin:0">
+        <li class="step"><span class="n">01</span><h3>Selezione dell'agave</h3><p>Agave blu di Jalisco, raccolta a piena maturazione tra i 7 e i 10 anni.</p></li>
+        <li class="step"><span class="n">02</span><h3>Raccolta</h3><p>I jimadores tagliano le foglie con la coa e ricavano la piña, il cuore ricco di zuccheri.</p></li>
+        <li class="step"><span class="n">03</span><h3>Cottura</h3><p>Dalle 24 alle 48 ore in forni di pietra o autoclavi: gli amidi diventano zuccheri.</p></li>
+        <li class="step"><span class="n">04</span><h3>Estrazione</h3><p>La tahona, la grande ruota di pietra, frantuma l'agave cotta e ne libera il mosto.</p></li>
+        <li class="step"><span class="n">05</span><h3>Fermentazione</h3><p>Dalle 48 alle 72 ore con lieviti selezionati, che sviluppano gli aromi.</p></li>
+        <li class="step"><span class="n">06</span><h3>Distillazione</h3><p>Doppia distillazione in alambicchi di rame o acciaio, per un distillato pulito.</p></li>
+        <li class="step"><span class="n">07</span><h3>Invecchiamento</h3><p>Come Añejo, Talisman riposa almeno un anno in botti di rovere.</p></li>
+        <li class="step"><span class="n">08</span><h3>Filtrazione e blend</h3><p>Il maestro tequilero filtra e assembla le partite per il profilo definitivo.</p></li>
+        <li class="step"><span class="n">09</span><h3>Imbottigliamento</h3><p>Il distillato entra nella bottiglia rigata, chiusa con il tappo cesellato.</p></li>
+      </ol>
+      <div class="ticks" id="ticks" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+    </div>
+  </section>
+
+  <section class="notes" id="degustazione" aria-labelledby="notes-t">
+    <div class="nwrap">
+      <div class="ncol">
+        <div class="hd">
+          <span class="kicker">Degustazione</span>
+          <h2 id="notes-t" class="rv">Le note <em>di Talisman</em></h2>
+          <p>Al palato è morbida e setosa. Scegli una nota sulla ruota o nella lista.</p>
+        </div>
+        <div class="nlist" role="list">
+          <button class="nitem" type="button" data-i="0" aria-pressed="true"><span class="nn">01</span><span class="nb"><span class="nm">Agave cotta</span><span class="nd">Dolcezza piena che apre il sorso.</span></span></button>
+          <button class="nitem" type="button" data-i="1" aria-pressed="false"><span class="nn">02</span><span class="nb"><span class="nm">Agrumi</span><span class="nd">Note leggere di scorza che accompagnano il centro bocca.</span></span></button>
+          <button class="nitem" type="button" data-i="2" aria-pressed="false"><span class="nn">03</span><span class="nb"><span class="nm">Rovere</span><span class="nd">Struttura e colore dati dall'invecchiamento in botte.</span></span></button>
+        </div>
+        <div class="nseg" aria-label="Modalità di servizio">
+          <button type="button" data-ice="0" aria-pressed="true">Liscia</button>
+          <button type="button" data-ice="1" aria-pressed="false">Con ghiaccio</button>
+        </div>
+      </div>
+      <div class="ndial">
+        <div class="dialbox" id="dialbox">
+          <svg viewBox="0 0 560 560" aria-hidden="true">
+            <circle cx="280" cy="280" r="262" fill="none" stroke="rgba(255,255,255,0.10)"/>
+            <g id="nticks"></g>
+            <g id="nsegs" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linecap="round"></g>
+            <circle cx="280" cy="280" r="188" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.12)" stroke-dasharray="2 7"/>
+            <g id="nind"><path id="nindArc" fill="none" stroke="#c9a96a" stroke-width="3" stroke-linecap="round"/><circle cx="280" cy="18" r="5" fill="#c9a96a"/><line x1="280" y1="30" x2="280" y2="44" stroke="#c9a96a" stroke-width="1.5"/></g>
+          </svg>
+          <div class="nglow" id="nglow"></div>
+          <div class="nill on"><img src="assets/notes/agave.webp" width="420" height="301" alt="Illustrazione incisa di una pianta di agave"></div>
+          <div class="nill"><img src="assets/notes/agrumi.webp" width="420" height="333" alt="Illustrazione incisa di un agrume tagliato a metà" loading="lazy"></div>
+          <div class="nill"><img src="assets/notes/rovere.webp" width="360" height="420" alt="Illustrazione incisa di una botte di rovere" loading="lazy"></div>
+          <div class="ncap" aria-live="polite"><b id="ncapName">Agave cotta</b><span id="ncapSub">01 / 03 · liscia</span></div>
+          <button class="npill" type="button" data-i="0" aria-pressed="true" style="left:50%;top:9.3%">Agave cotta</button>
+          <button class="npill" type="button" data-i="1" aria-pressed="false" style="left:85.25%;top:70.35%">Agrumi</button>
+          <button class="npill" type="button" data-i="2" aria-pressed="false" style="left:14.75%;top:70.35%">Rovere</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="camp" id="campagna" aria-labelledby="camp-t">
+    <div class="cpin" id="cpin">
+      <div class="chead" id="chead">
+        <span class="kicker">La campagna</span>
+        <h2 id="camp-t">Il mondo <em>di Talisman</em></h2>
+        <p>Dall'agave di Jalisco ai tavoli dove Talisman viene servita. Scorri ed entra nelle immagini.</p>
+      </div>
+      <figure class="cp" data-k="p"><img src="assets/camp/c01_goccia.webp" width="1400" height="788" alt="Una goccia di tequila sulla punta di una foglia di agave al tramonto" loading="lazy" decoding="async"></figure>
+      <figure class="cp" data-k="v"><img src="assets/camp/c02_raccolta.webp" width="1120" height="1400" alt="Raccolta delle piñas di agave vista dall'alto a Jalisco" loading="lazy" decoding="async"></figure>
+      <figure class="cp" data-k="v"><img src="assets/camp/c03_botti.webp" width="1120" height="1400" alt="Corridoio di botti di rovere americano e francese per l'invecchiamento" loading="lazy" decoding="async"></figure>
+      <figure class="cp" data-k="p"><img src="assets/camp/c04_equilibrio.webp" width="1400" height="788" alt="Bottiglia di Talisman su una roccia riflessa nell'acqua" loading="lazy" decoding="async"></figure>
+      <figure class="cp" data-k="v"><img src="assets/camp/c05_fuoco.webp" width="1120" height="1400" alt="Bottiglia di Talisman Añejo su una lastra di pietra davanti al fuoco" loading="lazy" decoding="async"></figure>
+      <figure class="cp" data-k="v"><img src="assets/camp/c06_scrigno.webp" width="1080" height="1100" alt="Talisman Tequila nel suo cofanetto in raso nero" loading="lazy" decoding="async"></figure>
+      <figure class="cp" data-k="v"><img src="assets/camp/c07_calici.webp" width="1120" height="1400" alt="Tre bicchieri di Talisman con le ombre della luce radente" loading="lazy" decoding="async"></figure>
+      <figure class="cp" data-k="p"><img src="assets/camp/c08_precisione.webp" width="1400" height="788" alt="Bicchiere di Talisman con ghiaccio davanti a un campo di agave" loading="lazy" decoding="async"></figure>
+      <figure class="cp" data-k="v"><img src="assets/camp/c09_mano.webp" width="1080" height="1350" alt="Mano con un bicchiere di Talisman accanto alla bottiglia" loading="lazy" decoding="async"></figure>
+      <figure class="cp" data-k="v"><img src="assets/camp/c10_bar.webp" width="1080" height="1350" alt="Talisman e due bicchieri su un tavolo di un club" loading="lazy" decoding="async"></figure>
+      <figure class="cp" data-k="v"><img src="assets/camp/c11_jet.webp" width="1080" height="1350" alt="Uomo in abito che sale su un jet privato al tramonto" loading="lazy" decoding="async"></figure>
+      <figure class="cp fin"><img src="assets/camp/finale.webp" srcset="assets/camp/finale_sm.webp 1200w, assets/camp/finale.webp 2400w" sizes="100vw" width="2400" height="1350" alt="Brindisi con Talisman in un campo di agave al tramonto, con il sigillo Talisman Tequila" loading="lazy" decoding="async"></figure>
+      <div class="cvig" aria-hidden="true"></div>
+      <div class="cend" id="cend">
+        <span class="kicker">Talisman Tequila by Tristan Tate</span>
+        <p>In Italia da metà novembre 2026 con Gabriel &amp; Spirits Group.</p>
+        <div class="cta"><a class="btn" href="https://tequilatalisman.com" target="_blank" rel="noopener">Acquista</a><a class="btn ghost" href="#contatti">Diventa partner</a></div>
+      </div>
+      <div class="cfoot" aria-hidden="true"><span class="cnum" id="cnum">01 <small>/ 11</small></span><span class="kicker">Campagna Talisman</span></div>
+    </div>
+  </section>
+
+  <section class="spec" aria-labelledby="spec-t">
+    <div class="head"><span class="kicker">Scheda tecnica</span><h2 id="spec-t" class="rv">Talisman <em>Añejo</em></h2></div>
+    <div class="specgrid">
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 33V15M18 15C13 10 8 9 3 10c4 2 9 5 15 5zM18 15c5-5 10-6 15-5-4 2-9 5-15 5zM18 17C14 11 14 6 18 2c4 4 4 9 0 15z"/></svg><b data-count="100" data-suffix="%">100%</b><span>Puro de agave</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M13 3h10v6l4 6v18H9V15l4-6z"/><path d="M9 22h18"/></svg><b data-count="40" data-suffix="% vol">40% vol</b><span>Gradazione, 80 proof</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><rect x="7" y="10" width="22" height="22" rx="3"/><path d="M14 10V4h8v6"/></svg><b data-count="700" data-suffix=" ml">700 ml</b><span>Formato</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M9 5h18c3 4 3 22 0 26H9C6 27 6 9 9 5z"/><path d="M7 13h22M7 23h22"/></svg><b data-count="1" data-prefix="≥ " data-suffix=" anno">≥ 1 anno</b><span>Invecchiamento in rovere</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 33s-11-10-11-18a11 11 0 0122 0c0 8-11 18-11 18z"/><circle cx="18" cy="15" r="4"/></svg><b>El Arenal</b><span>Jalisco, Messico</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14"/><path d="M11 18l5 5 9-10"/></svg><b>NOM 1649</b><span>Denominazione di origine protetta</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M6 31V12l12-8 12 8v19z"/><path d="M14 31v-9h8v9"/></svg><b>Don Cayo</b><span>Compañía Tequilera Don Cayo</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14"/><path d="M4 18h28M18 4c-5 4-5 24 0 28M18 4c5 4 5 24 0 28"/></svg><b>G&amp;S Group</b><span>Distribuzione</span></div>
+    </div>
+  </section>
+
+  <section class="route" id="italia" aria-labelledby="route-t">
+    <div class="pin">
+      <div class="txt">
+        <span class="kicker">Stati Uniti, Italia</span>
+        <h2 id="route-t" class="rv">Dagli Stati Uniti <em>all'Europa</em></h2>
+        <p>Dopo i risultati negli Stati Uniti, Talisman arriva in Italia da metà novembre 2026 insieme a Platinum Tequila: è il primo passo dell'espansione europea di Gabriel &amp; Spirits Group.</p>
+        <div class="big">
+          <div><b data-count="620000">620.000</b><span>Bottiglie vendute negli USA da Talisman e Platinum</span></div>
+          <div><b data-count="20" data-prefix="oltre " data-suffix=" mln $">oltre 20 mln $</b><span>Fatturato</span></div>
+        </div>
+      </div>
+      <canvas id="globeGL" aria-label="Rotta dagli Stati Uniti all'Italia"></canvas>
+    </div>
+  </section>
+
+  <section class="contact" id="contatti" aria-labelledby="contact-t">
+    <div class="txt">
+      <span class="kicker">Distribuzione e partnership</span>
+      <h2 id="contact-t" class="rv">Contatti</h2>
+      <p>Distributori, hotellerie di lusso, ristorazione, operatori Ho.Re.Ca., imprenditori e partner interessati a distribuzione, partnership o franchising possono scriverci.</p>
+    </div>
+    <div class="txt">
+      <div class="mail"><code id="mail">info@gabriel-spirits.com</code><button class="copy" id="copyMail" type="button">Copia indirizzo</button></div>
+      <div class="cta"><a class="btn" href="https://tequilatalisman.com" target="_blank" rel="noopener">Acquista Talisman</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <img src="assets/gs_logo.webp" width="220" height="51" alt="Gabriel &amp; Spirits">
+  <nav aria-label="Footer">
+    <a href="https://www.gabriel-spirits.com/it">Home</a><a href="https://www.gabriel-spirits.com/it/brands">Brands</a><a href="https://www.gabriel-spirits.com/it">La storia</a><a href="https://www.gabriel-spirits.com/it">Team</a><a href="https://tequilatalisman.com" target="_blank" rel="noopener">Negozio</a><a href="#contatti">Contatti</a>
+  </nav>
+  <small>© 2026 Gabriel &amp; Spirits Group. Talisman Tequila Añejo, 40% vol. Bevi responsabilmente.</small>
+</footer>
+
+<script>
+// ---------- UI: header, drawer, copy, reveals, counters, tilt ----------
+(() => {
+  const hdr = document.getElementById('hdr');
+  addEventListener('scroll', () => hdr.classList.toggle('solid', scrollY > 40), { passive: true });
+  const burger = document.getElementById('burger'), drawer = document.getElementById('drawer');
+  burger.addEventListener('click', () => { const o = drawer.hidden; drawer.hidden = !o; burger.setAttribute('aria-expanded', String(o)); });
+  drawer.addEventListener('click', (e) => { if (e.target.tagName === 'A') { drawer.hidden = true; burger.setAttribute('aria-expanded', 'false'); } });
+  const copyBtn = document.getElementById('copyMail');
+  copyBtn.addEventListener('click', () => {
+    const el = document.getElementById('mail');
+    const sel = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    try { navigator.clipboard.writeText(el.textContent).then(() => { copyBtn.textContent = 'Copiato'; }, sel); } catch (e) { sel(); }
+  });
+  // word reveal
+  document.querySelectorAll('.rv').forEach((h) => {
+    const walk = (node) => [...node.childNodes].forEach((c) => {
+      if (c.nodeType === 3) { const frag = document.createDocumentFragment(); c.textContent.split(/(\s+)/).forEach((t) => { if (/^\s+$/.test(t) || !t) frag.append(t); else { const s = document.createElement('span'); s.className = 'w'; s.textContent = t; frag.append(s); } }); c.replaceWith(frag); }
+      else if (c.nodeType === 1) walk(c);
+    });
+    walk(h);
+    [...h.querySelectorAll('.w')].forEach((w, i) => { w.style.transitionDelay = (i * 70) + 'ms'; });
+  });
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.4 });
+  document.querySelectorAll('.rv').forEach((h) => io.observe(h));
+  // counters
+  const fmt = (n) => n.toLocaleString('it-IT');
+  const co = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return; co.unobserve(e.target);
+    const el = e.target, to = +el.dataset.count, pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+    const t0 = performance.now(), dur = 1600;
+    const tick = (now) => { const t = Math.min((now - t0) / dur, 1), k = 1 - Math.pow(1 - t, 4); el.textContent = pre + fmt(Math.round(to * k)) + suf; if (t < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }), { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach((el) => co.observe(el));
+  // tilt on spec items
+  document.querySelectorAll('.sp').forEach((c) => {
+    c.addEventListener('pointermove', (e) => { const r = c.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5; c.style.transform = `rotateY(${x * 18}deg) rotateX(${-y * 18}deg) translateZ(10px)`; });
+    c.addEventListener('pointerleave', () => { c.style.transform = ''; });
+  });
+})();
+
+// ---------- Cycles frame sequence ----------
+(() => {
+  const N = 479, P = 240, FH = { d: 1080, m: 1280 };
+  const canvas = document.getElementById('seq'), ctx = canvas.getContext('2d');
+  const stage = canvas.parentElement, cine = document.getElementById('cine');
+  const loading = document.getElementById('loading'), ldtxt = document.getElementById('ldtxt');
+  const chapters = [...document.querySelectorAll('.chapter')];
+  const bar = document.getElementById('bar'), cue = document.getElementById('cue');
+  const barT = document.getElementById('barT'), barB = document.getElementById('barB');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let set = innerWidth / innerHeight < 0.9 ? 'm' : 'd';
+  // each file packs two consecutive rendered frames stacked vertically
+  const packs = { d: new Array(P), m: new Array(P) };
+  const src = (s, k) => `assets/seq3/${s}/p_${String(k).padStart(3, '0')}.webp`;
+  let loaded = 0;
+  function load(s) {
+    const order = []; const seen = new Set();
+    for (const step of [8, 4, 2, 1]) for (let k = 0; k < P; k += step) if (!seen.has(k)) { seen.add(k); order.push(k); }
+    let q = 0, active = 0;
+    const next = () => {
+      while (active < 6 && q < order.length) {
+        const k = order[q++]; const img = new Image(); active++;
+        img.decoding = 'async';
+        img.onload = () => { packs[s][k] = img; active--; if (s === set) { loaded++; ldtxt.textContent = Math.round(loaded / P * 100) + '%'; if (loaded >= 20) loading.classList.add('done'); } next(); };
+        img.onerror = () => { active--; next(); };
+        img.src = src(s, k);
+      }
+    };
+    next();
+  }
+  load(set);
+  let w = 0, h = 0, drawn = '';
+  function resize() {
+    const dpr = Math.min(devicePixelRatio, 2);
+    w = stage.clientWidth; h = stage.clientHeight;
+    canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.imageSmoothingQuality = 'high';
+    drawn = '';
+  }
+  addEventListener('resize', resize); resize();
+  const has = (i) => !!packs[set][i >> 1];
+  function nearest(i) { for (let d = 0; d < N; d++) { if (i - d >= 0 && has(i - d)) return i - d; if (i + d < N && has(i + d)) return i + d; } return -1; }
+  // sub-frame blending: between two rendered frames the canvas cross-dissolves by the exact scroll position
+  function put(i, a) {
+    const img = packs[set][i >> 1], fw = img.naturalWidth, fh = FH[set];
+    const s = Math.max(w / fw, h / fh), iw = fw * s, ih = fh * s;
+    ctx.globalAlpha = a; ctx.drawImage(img, 0, (i & 1) * fh, fw, fh, (w - iw) / 2, (h - ih) / 2, iw, ih); ctx.globalAlpha = 1;
+  }
+  function draw(x) {
+    const f0 = Math.floor(x), f1 = Math.min(f0 + 1, N - 1), t = x - f0;
+    const i0 = nearest(f0); if (i0 < 0) return;
+    const b = i0 === f0 && has(f1) && f1 !== f0;
+    const key = i0 + ':' + (b ? t.toFixed(3) : '');
+    if (drawn === key) return;
+    ctx.fillStyle = '#000'; ctx.fillRect(0, 0, w, h);
+    put(i0, 1);
+    if (b && t > 0.002) put(f1, t);
+    drawn = key;
+  }
+  const progress = () => { const r = cine.getBoundingClientRect(); const span = cine.offsetHeight - innerHeight; return Math.min(Math.max(-r.top / span, 0), 1); };
+  let pS = 0, last = performance.now();
+  const closeups = [[0.36, 0.48], [0.56, 0.69]];
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const dt = Math.min((now - last) / 1000, 0.05); last = now;
+    const pT = progress();
+    pS += (pT - pS) * (reduce ? 1 : 1 - Math.pow(0.002, dt));
+    draw(pS * (N - 1));
+    const close = closeups.some(([a, b]) => pS > a - 0.02 && pS < b + 0.02);
+    const bh = close && w > 900 ? '8vh' : '0'; barT.style.height = bh; barB.style.height = bh;
+    chapters.forEach((c) => {
+      const a = +c.dataset.in, b = +c.dataset.out, f = 0.03;
+      let o = Math.max(Math.min(Math.min((pS - a) / f + (a === 0 ? 1 : 0), 1), Math.min((b - pS) / f, 1)), 0);
+      c.style.opacity = o.toFixed(3); c.style.transform = `translateY(${((1 - o) * 24).toFixed(1)}px)`;
+      c.style.pointerEvents = o > 0.5 ? 'auto' : 'none';
+    });
+    bar.style.width = (pS * 100).toFixed(2) + '%';
+    cue.style.opacity = Math.max(0, 1 - pS * 20);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+<script>
+// ---------- Processo: foto a serranda + ruota di degustazione + campagna in volo ----------
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, a = 0, b = 1) => Math.min(Math.max(v, a), b);
+  const ease = (t) => t * t * (3 - 2 * t);
+
+  // PROCESSO
+  const sec = document.getElementById('processo'), track = document.getElementById('track'), steps = [...track.children];
+  const ticks = [...document.querySelectorAll('#ticks b')], bign = document.getElementById('bign'), shutter = document.getElementById('shutter');
+  const NAMES = steps.map((s) => s.querySelector('h3').textContent);
+  const S = 12, layers = [];
+  for (let k = 0; k < 9; k++) {
+    const ly = document.createElement('div'); ly.className = 'ly'; ly.style.zIndex = k;
+    const url = `url("assets/proc/p${String(k + 1).padStart(2, '0')}.webp")`;
+    const sl = [];
+    for (let j = 0; j < S; j++) {
+      const d = document.createElement('div'); d.className = 'sl';
+      d.style.top = (j * 100 / S) + '%'; d.style.height = (100 / S + 0.05) + '%';
+      const i = document.createElement('i'); i.style.backgroundImage = url;
+      i.style.backgroundSize = `100% ${S * 100}%`; i.style.backgroundPosition = `0 ${(j / (S - 1)) * 100}%`;
+      const e = document.createElement('b'); d.append(i, e); ly.append(d); sl.push([i, e]);
+    }
+    shutter.append(ly); layers.push({ ly, sl, last: -1 });
+  }
+  // preload the next photos in order
+  for (let k = 0; k < 9; k++) { const im = new Image(); im.src = `assets/proc/p${String(k + 1).padStart(2, '0')}.webp`; }
+  let lastIdx = -1, pS = 0, inited = false;
+  function procLoop() {
+    requestAnimationFrame(procLoop);
+    const rect = sec.getBoundingClientRect(); const span = sec.offsetHeight - innerHeight;
+    if (rect.bottom < -50 || rect.top > innerHeight + 50) return;
+    const pT = clamp(-rect.top / span, 0, 0.9999);
+    pS = inited && !reduce ? pS + (pT - pS) * 0.14 : pT; inited = true;
+    const f = pS * 9, idx = Math.min(Math.floor(f), 8);
+    const stepW = steps[0].getBoundingClientRect().width + innerWidth * 0.06;
+    const shift = innerWidth < 900 ? idx + ease(clamp((f - idx - 0.72) / 0.28)) : Math.max(f - 0.5, 0);
+    track.style.transform = `translateX(${-shift * stepW}px)`;
+    ticks.forEach((t, i) => { t.style.transform = `scaleX(${clamp(f - i)})`; });
+    // serranda: ogni foto scende a lamelle, dall'alto verso il basso, legata allo scroll
+    layers.forEach((L, k) => {
+      const t = k === 0 ? 1 : clamp((f - (k - 0.42)) / 0.62);
+      const key = Math.round(t * 1000); if (key === L.last) return; L.last = key;
+      L.ly.style.visibility = t <= 0 ? 'hidden' : 'visible';
+      const st = 0.075, tot = 1 + st * (S - 1);
+      L.sl.forEach(([i, e], j) => {
+        const l = ease(clamp(t * tot - j * st));
+        i.style.transform = `translate3d(0,${((l - 1) * 100).toFixed(2)}%,0)`;
+        e.style.opacity = (l > 0 && l < 1) ? (Math.sin(l * Math.PI) * 0.9).toFixed(2) : 0;
+      });
+      L.ly.style.transform = `scale(${(1.06 - 0.06 * ease(clamp((f - k + 0.4) / 1.4))).toFixed(4)})`;
+    });
+    if (idx !== lastIdx) { lastIdx = idx; steps.forEach((s, i) => s.classList.toggle('on', i === idx)); bign.textContent = String(idx + 1).padStart(2, '0'); shutter.setAttribute('aria-label', 'Fase ' + (idx + 1) + ': ' + NAMES[idx]); }
+  }
+  requestAnimationFrame(procLoop);
+
+  // RUOTA DI DEGUSTAZIONE
+  const NOTE = ['Agave cotta', 'Agrumi', 'Rovere'];
+  const c = 280, pt = (deg, r) => { const a = deg * Math.PI / 180; return [(c + r * Math.cos(a)).toFixed(2), (c + r * Math.sin(a)).toFixed(2)]; };
+  const arc = (a1, a2, r) => { const p1 = pt(a1, r), p2 = pt(a2, r); return `M${p1[0]} ${p1[1]} A${r} ${r} 0 0 1 ${p2[0]} ${p2[1]}`; };
+  const NS = 'http://www.w3.org/2000/svg';
+  const gt = document.getElementById('nticks');
+  for (let k = 0; k < 90; k++) { const deg = k * 4 - 90, major = k % 15 === 0, a1 = pt(deg, major ? 240 : 246), b1 = pt(deg, 252); const l = document.createElementNS(NS, 'line'); l.setAttribute('x1', a1[0]); l.setAttribute('y1', a1[1]); l.setAttribute('x2', b1[0]); l.setAttribute('y2', b1[1]); l.setAttribute('stroke', major ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.16)'); gt.append(l); }
+  const gs = document.getElementById('nsegs');
+  [0, 1, 2].forEach((k) => { const mid = -90 + 120 * k; const p = document.createElementNS(NS, 'path'); p.setAttribute('d', arc(mid - 54, mid + 54, 228)); gs.append(p); });
+  document.getElementById('nindArc').setAttribute('d', arc(-144, -36, 228));
+  const ind = document.getElementById('nind'), glow = document.getElementById('nglow');
+  const ills = [...document.querySelectorAll('.nill')], items = [...document.querySelectorAll('.nitem')], pills = [...document.querySelectorAll('.npill')], segBtns = [...document.querySelectorAll('.nseg button')];
+  const capName = document.getElementById('ncapName'), capSub = document.getElementById('ncapSub');
+  let sel = 0, rot = 0, ice = false, touched = false;
+  let capNameRef = capName;
+  function go(i, byUser) {
+    let delta = ((i - sel) % 3 + 3) % 3; if (delta === 2) delta = -1;
+    rot += delta * 120; sel = i; if (byUser) touched = true;
+    const cur = capNameRef; const nb = cur.cloneNode(); nb.textContent = NOTE[sel]; cur.replaceWith(nb); capNameRef = nb;
+    ind.style.transform = `rotate(${rot}deg)`;
+    ills.forEach((d, k) => d.classList.toggle('on', k === sel));
+    items.forEach((b, k) => b.setAttribute('aria-pressed', String(k === sel)));
+    pills.forEach((b, k) => b.setAttribute('aria-pressed', String(k === sel)));
+    capSub.textContent = `0${sel + 1} / 03 · ${ice ? 'con ghiaccio' : 'liscia'}`;
+  }
+  [...items, ...pills].forEach((b) => b.addEventListener('click', () => go(+b.dataset.i, true)));
+  segBtns.forEach((b) => b.addEventListener('click', () => { ice = b.dataset.ice === '1'; touched = true; segBtns.forEach((x) => x.setAttribute('aria-pressed', String((x.dataset.ice === '1') === ice))); glow.classList.toggle('ice', ice); capSub.textContent = `0${sel + 1} / 03 · ${ice ? 'con ghiaccio' : 'liscia'}`; }));
+  let dialOn = false; new IntersectionObserver(([e]) => { dialOn = e.isIntersecting; }, { threshold: 0.3 }).observe(document.getElementById('dialbox'));
+  if (!reduce) setInterval(() => { if (!touched && dialOn) go((sel + 1) % 3, false); }, 4800);
+
+  // CAMPAGNA: la camera avanza in profondità, le immagini scorrono ai lati e si arriva all'ultima a tutto schermo
+  const camp = document.getElementById('campagna'), cpin = document.getElementById('cpin');
+  const figs = [...camp.querySelectorAll('.cp')], chead = document.getElementById('chead'), cend = document.getElementById('cend'), cnum = document.getElementById('cnum');
+  const D = 1150, Z0 = 2900, NI = figs.length - 1, ZF = -((NI - 1) * D + Z0 + D * 1.1);
+  let layout = [];
+  function lay() {
+    const W = innerWidth, H = innerHeight, mob = W < 760;
+    layout = figs.map((fg, i) => {
+      if (i === NI) return { x: 0, y: 0, z: ZF, w: W };
+      const side = i % 2 ? 1 : -1, land = fg.dataset.k === 'p';
+      const w = mob ? (land ? W * 0.86 : W * 0.66) : (land ? Math.min(W * 0.42, 720) : Math.min(W * 0.27, 440));
+      const x = side * (mob ? W * 0.16 : W * (land ? 0.2 : 0.24));
+      const y = [-0.1, 0.08, -0.04, 0.12, -0.12, 0.04][i % 6] * H;
+      return { x, y, z: -(i * D + Z0), w };
+    });
+    figs.forEach((fg, i) => { if (i < NI) fg.style.width = layout[i].w + 'px'; });
+  }
+  addEventListener('resize', lay); lay();
+  let cS = 0, mx = 0, my = 0, pmx = 0, pmy = 0, cIdx = -1;
+  cpin.addEventListener('pointermove', (e) => { mx = e.clientX / innerWidth - 0.5; my = e.clientY / innerHeight - 0.5; });
+  function campLoop() {
+    requestAnimationFrame(campLoop);
+    const r = camp.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+    const span = camp.offsetHeight - innerHeight, pT = clamp(-r.top / span);
+    cS = reduce ? pT : cS + (pT - cS) * 0.1;
+    pmx += (mx - pmx) * 0.06; pmy += (my - pmy) * 0.06;
+    cpin.style.perspectiveOrigin = `${(50 + pmx * 8).toFixed(2)}% ${(50 + pmy * 8).toFixed(2)}%`;
+    const cam = clamp(cS / 0.96) * -ZF;
+    chead.style.opacity = clamp(1 - cS / 0.06).toFixed(3);
+    chead.style.transform = `translate(-50%,-50%) scale(${(1 + cS * 3).toFixed(3)})`;
+    let near = NI, best = 1e9;
+    figs.forEach((fg, i) => {
+      const L = layout[i], z = L.z + cam;
+      if (i === NI) {
+        const o = clamp((z + 2900) / 1500);
+        fg.style.visibility = o > 0 ? 'visible' : 'hidden';
+        fg.style.opacity = o.toFixed(3);
+        fg.style.transform = `translate(-50%,-50%) translate3d(0,0,${Math.min(z, 0).toFixed(1)}px)`;
+        return;
+      }
+      const o = clamp((z + 2700) / 1100) * clamp((620 - z) / 380);
+      if (o <= 0) { fg.style.visibility = 'hidden'; return; }
+      fg.style.visibility = 'visible'; fg.style.opacity = o.toFixed(3);
+      fg.style.transform = `translate(-50%,-50%) translate3d(${L.x.toFixed(1)}px,${L.y.toFixed(1)}px,${z.toFixed(1)}px) rotateY(${(-Math.sign(L.x) * clamp(z / 1400, -1, 1) * 8).toFixed(2)}deg)`;
+      const dz = Math.abs(z + 300); if (dz < best) { best = dz; near = i; }
+    });
+    const endO = clamp((cS - 0.93) / 0.05);
+    cend.style.opacity = endO.toFixed(3); cend.style.transform = `translateY(${((1 - endO) * 20).toFixed(1)}px)`; cend.style.pointerEvents = endO > 0.5 ? 'auto' : 'none';
+    const shown = near + 1;
+    if (shown !== cIdx) { cIdx = shown; cnum.innerHTML = `${String(Math.min(shown, NI)).padStart(2, '0')} <small>/ ${NI}</small>`; }
+    cnum.parentElement.style.opacity = clamp((cS - 0.03) / 0.04) * clamp((0.95 - cS) / 0.03);
+  }
+  requestAnimationFrame(campLoop);
+})();
+</script>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function makeRenderer(canvas) {
+  const r = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  r.setPixelRatio(Math.min(devicePixelRatio, 2)); r.outputColorSpace = THREE.SRGBColorSpace;
+  r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = 1.1;
+  const env = new THREE.PMREMGenerator(r).fromScene(new RoomEnvironment(r), 0.04).texture;
+  return { r, env };
+}
+const gold = (env) => new THREE.MeshPhysicalMaterial({ color: 0xd9b072, metalness: 1, roughness: 0.22, clearcoat: 0.6, clearcoatRoughness: 0.1, envMap: env, envMapIntensity: 1.4 });
+const amberGlass = (env) => new THREE.MeshPhysicalMaterial({ color: 0xd07a2a, metalness: 0, roughness: 0.05, transmission: 0.9, thickness: 0.4, ior: 1.4, attenuationColor: new THREE.Color(0xa0400a), attenuationDistance: 0.5, envMap: env, envMapIntensity: 1.2 });
+const visible = (el, cb) => { let on = false; new IntersectionObserver(([e]) => { on = e.isIntersecting; }, { rootMargin: '200px' }).observe(el); return () => on; };
+
+// ---------- ROTTA: dotted globe, arc from USA to Italy driven by scroll ----------
+(() => {
+  const sec = document.getElementById('italia'), canvas = document.getElementById('globeGL');
+  const { r } = makeRenderer(canvas);
+  const scene = new THREE.Scene(); const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 50); cam.position.set(0, 0, 7.2);
+  const globe = new THREE.Group(); scene.add(globe);
+  const R = 1.6, NP = 6000, pts = new Float32Array(NP * 3);
+  for (let i = 0; i < NP; i++) { const y = 1 - (i / (NP - 1)) * 2, rr = Math.sqrt(1 - y * y), th = i * Math.PI * (3 - Math.sqrt(5)); pts[i * 3] = Math.cos(th) * rr * R; pts[i * 3 + 1] = y * R; pts[i * 3 + 2] = Math.sin(th) * rr * R; }
+  const pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(pts, 3));
+  globe.add(new THREE.Points(pg, new THREE.PointsMaterial({ color: 0xc9a96a, size: 0.016, transparent: true, opacity: 0.55 })));
+  globe.add(new THREE.Mesh(new THREE.SphereGeometry(R * 0.995, 64, 32), new THREE.MeshBasicMaterial({ color: 0x000000 })));
+  const ll = (lat, lon, rad = R) => { const phi = (90 - lat) * Math.PI / 180, th = (lon + 180) * Math.PI / 180; return new THREE.Vector3(-rad * Math.sin(phi) * Math.cos(th), rad * Math.cos(phi), rad * Math.sin(phi) * Math.sin(th)); };
+  const a = ll(36, -98), b = ll(42.5, 12.5);
+  const mid = a.clone().add(b).multiplyScalar(0.5).normalize().multiplyScalar(R * 1.55);
+  const curve = new THREE.QuadraticBezierCurve3(a, mid, b);
+  const tube = new THREE.Mesh(new THREE.TubeGeometry(curve, 200, 0.012, 8), new THREE.MeshBasicMaterial({ color: 0xe7cf9c }));
+  globe.add(tube);
+  const mk = (p) => { const g = new THREE.Group(); const dot = new THREE.Mesh(new THREE.SphereGeometry(0.035, 16, 8), new THREE.MeshBasicMaterial({ color: 0xe7cf9c })); const halo = new THREE.Mesh(new THREE.RingGeometry(0.05, 0.065, 48), new THREE.MeshBasicMaterial({ color: 0xe7cf9c, transparent: true, side: THREE.DoubleSide })); halo.lookAt(p.clone().multiplyScalar(2)); g.add(dot, halo); g.position.copy(p); g.userData.halo = halo; globe.add(g); return g; };
+  const mA = mk(a), mB = mk(b);
+  const plane = new THREE.Mesh(new THREE.ConeGeometry(0.035, 0.12, 12), new THREE.MeshBasicMaterial({ color: 0xffffff })); globe.add(plane);
+  const isOn = visible(canvas);
+  function size() { const w = canvas.clientWidth, h = canvas.clientHeight; r.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
+  addEventListener('resize', size); size();
+  const idx = tube.geometry.index.count;
+  function loop(now) {
+    requestAnimationFrame(loop); if (!isOn()) return;
+    const rc = sec.getBoundingClientRect(); const span = sec.offsetHeight - innerHeight;
+    const p = Math.min(Math.max(-rc.top / span, 0), 1);
+    const k = Math.min(Math.max((p - 0.1) / 0.7, 0), 1);
+    tube.geometry.setDrawRange(0, Math.floor(idx * k / 6) * 6);
+    const pp = curve.getPoint(k), tg = curve.getTangent(Math.min(k, 0.999)); plane.position.copy(pp); plane.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), tg); plane.visible = k > 0.01 && k < 0.999;
+    const t = now / 1000;
+    [mA, mB].forEach((m, i) => { const s = 1 + ((t * 0.8 + i * 0.5) % 1) * 2.5; m.userData.halo.scale.setScalar(s); m.userData.halo.material.opacity = 1 - ((t * 0.8 + i * 0.5) % 1); });
+    globe.rotation.y = 1.25 - k * 1.55 + (reduce ? 0 : Math.sin(t * 0.2) * 0.03); globe.rotation.x = 0.35;
+    r.render(scene, cam);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+
+</body>
+</html>
