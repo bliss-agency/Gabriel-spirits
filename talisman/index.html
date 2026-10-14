@@ -545,15 +545,16 @@ p{margin:0}
       const i = pick(); if (i < 0) return;
       state[i] = 1; active++;
       const img = new Image(); img.src = src(i);
-      img.decode().then(() => { frames[i] = img; state[i] = 2; active--; warm(); progressUI(); pump(); }, () => { state[i] = 0; active--; setTimeout(pump, 400); });
+      img.decode().then(() => { frames[i] = img; state[i] = 2; active--; drawn = -1; warm(); progressUI(); pump(); }, () => { state[i] = 0; active--; setTimeout(pump, 400); });
     }
   }
   const FIRST = Math.min(N, mob ? 60 : 90);
   function progressUI() {
     if (loading.classList.contains('done')) return;
-    let k = 0; while (k < FIRST && state[k] === 2) k++;
-    ldtxt.textContent = Math.round(k / FIRST * 100) + '%';
-    if (k >= FIRST) loading.classList.add('done');
+    const base = cur > FIRST ? Math.max(0, cur - 4) : 0, need = cur > FIRST ? 30 : FIRST;
+    let k = 0; while (k < need && base + k < N && state[base + k] === 2) k++;
+    ldtxt.textContent = Math.round(k / need * 100) + '%';
+    if (k >= need || base + k >= N) loading.classList.add('done');
   }
   // finestra di frame già decodificati in memoria GPU attorno alla posizione: niente decodifica durante lo scroll
   let warmBusy = false;
@@ -568,34 +569,29 @@ p{margin:0}
     } finally { warmBusy = false; }
   }
   pump();
-  let w = 0, h = 0, drawn = '';
+  let w = 0, h = 0, drawn = -1;
   function resize() {
     w = stage.clientWidth; h = stage.clientHeight;
     const k = Math.min(devicePixelRatio || 1, Math.sqrt(2.4e6 / (w * h)), 2);
     canvas.width = Math.round(w * k); canvas.height = Math.round(h * k);
     ctx.setTransform(k, 0, 0, k, 0, 0); ctx.imageSmoothingQuality = 'high';
-    drawn = '';
+    drawn = -1;
   }
   addEventListener('resize', resize); resize();
   const ok = (i) => i >= 0 && i < N && state[i] === 2;
-  function lower(i) { for (let j = i; j >= 0; j--) if (ok(j)) return j; return -1; }
-  function upper(i) { for (let j = i; j < N; j++) if (ok(j)) return j; return -1; }
   function put(i, a) {
     const im = bmp[i] || frames[i], iw0 = im.width || im.naturalWidth, ih0 = im.height || im.naturalHeight;
     const s = Math.max(w / iw0, h / ih0), iw = iw0 * s, ih = ih0 * s;
     ctx.globalAlpha = a; ctx.drawImage(im, (w - iw) / 2, (h - ih) / 2, iw, ih); ctx.globalAlpha = 1;
   }
-  // tra due frame disponibili la tela li fonde secondo la posizione esatta: il movimento resta continuo anche durante il caricamento
+  // un solo frame alla volta, sempre nitido: il più vicino alla posizione di scroll tra quelli pronti
   function draw(x) {
-    let a = lower(Math.floor(x)), b = upper(Math.ceil(x));
-    if (a < 0 && b < 0) return; if (a < 0) a = b; if (b < 0) b = a;
-    if (b - a > 4) { if (x - a < b - x) b = a; else a = b; }
-    const t = b > a ? (x - a) / (b - a) : 0;
-    const key = a + ':' + b + ':' + (b > a ? t.toFixed(2) : '');
-    if (key === drawn) return;
-    put(a, 1); if (b > a && t > 0.01) put(b, t);
-    drawn = key;
-    const c = Math.round(x); if (Math.abs(c - cur) > 2) { cur = c; pump(); warm(); }
+    const r = Math.round(x);
+    let i = -1;
+    for (let d = 0; d < N; d++) { if (ok(r - d)) { i = r - d; break; } if (ok(r + d)) { i = r + d; break; } }
+    if (Math.abs(r - cur) > 2) { cur = r; pump(); warm(); progressUI(); }
+    if (i < 0 || i === drawn) return;
+    put(i, 1); drawn = i;
   }
   const progress = () => { const r = cine.getBoundingClientRect(); const span = cine.offsetHeight - innerHeight; return Math.min(Math.max(-r.top / span, 0), 1); };
   let pS = 0, last = performance.now(), lastBar = '';
