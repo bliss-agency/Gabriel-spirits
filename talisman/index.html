@@ -470,7 +470,7 @@ p{margin:0}
 // ---------- smooth scroll (Lenis) ----------
 (() => {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || typeof Lenis === 'undefined') return;
-  const lenis = new Lenis({ lerp: 0.08, wheelMultiplier: 0.9, smoothWheel: true });
+  const lenis = new Lenis({ lerp: 0.06, wheelMultiplier: 0.85, touchMultiplier: 1, smoothWheel: true });
   window.__lenis = lenis;
   const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); }; requestAnimationFrame(raf);
   document.addEventListener('click', (e) => { const a = e.target.closest('a[href^="#"]'); if (!a) return; const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); lenis.scrollTo(t, { offset: 0 }); } });
@@ -570,8 +570,9 @@ p{margin:0}
     const dt = Math.min((now - last) / 1000, 0.05); last = now;
     if (cine.getBoundingClientRect().bottom < -100) return;
     const pT = progress();
-    pS += (pT - pS) * (reduce || window.__lenis ? 1 : 1 - Math.pow(0.0005, dt));
-    if (Math.abs(pT - pS) < 0.00005) pS = pT;
+    // inerzia: la sequenza insegue lo scroll con una coda morbida e si ferma rallentando
+    pS += (pT - pS) * (reduce ? 1 : 1 - Math.exp(-dt / 0.32));
+    if (Math.abs(pT - pS) < 0.00002) pS = pT;
     draw(pS * (N - 1));
     const close = closeups.some(([a, b]) => pS > a - 0.02 && pS < b + 0.02);
     const bh = close && w > 900 ? '8vh' : '0'; if (bh !== lastBar) { lastBar = bh; barT.style.height = bh; barB.style.height = bh; }
@@ -623,7 +624,7 @@ p{margin:0}
     const rect = sec.getBoundingClientRect(); const span = sec.offsetHeight - innerHeight;
     if (rect.bottom < -50 || rect.top > innerHeight + 50) return;
     const pT = clamp(-rect.top / span, 0, 0.9999);
-    pS = inited && !reduce && !window.__lenis ? pS + (pT - pS) * 0.14 : pT; inited = true;
+    pS = inited && !reduce ? pS + (pT - pS) * 0.09 : pT; inited = true;
     const f = pS * 9, idx = Math.min(Math.floor(f), 8);
     const stepW = steps[0].getBoundingClientRect().width + innerWidth * 0.06;
     const shift = innerWidth < 900 ? idx + ease(clamp((f - idx - 0.72) / 0.28)) : Math.max(f - 0.5, 0);
@@ -703,7 +704,7 @@ p{margin:0}
     requestAnimationFrame(campLoop);
     const r = camp.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
     const span = camp.offsetHeight - innerHeight, pT = clamp(-r.top / span);
-    cS = reduce || window.__lenis ? pT : cS + (pT - cS) * 0.1;
+    cS = reduce ? pT : cS + (pT - cS) * 0.08;
     pmx += (mx - pmx) * 0.06; pmy += (my - pmy) * 0.06;
     cpin.style.perspectiveOrigin = `${(50 + pmx * 8).toFixed(2)}% ${(50 + pmy * 8).toFixed(2)}%`;
     const cam = clamp(cS / 0.96) * -ZF;
