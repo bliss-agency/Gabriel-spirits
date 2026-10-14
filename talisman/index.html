@@ -44,6 +44,7 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box;letter-spacing:0}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:hidden}
 html{background:var(--black)}
 body{background:var(--black);color:var(--white);font-family:var(--f-body);font-size:17px;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
@@ -58,7 +59,7 @@ p{margin:0}
 
 /* HEADER */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gutter) 14px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;transition:background .4s,backdrop-filter .4s}
-.hdr.solid{background:rgba(0,0,0,.55);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
+.hdr.solid{background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.55))}
 .hdr nav{display:flex;align-items:center;gap:6px}
 .hdr nav.right{justify-content:flex-end}
 .hdr nav a{font-size:14px;font-weight:500;text-decoration:none;color:var(--soft);padding:9px 16px;border-radius:999px;transition:background .25s,color .25s}
@@ -69,7 +70,7 @@ p{margin:0}
 .hdr .logo{display:block;width:210px;height:auto;aspect-ratio:1214/283}
 .burger{display:none;background:rgba(255,255,255,.06);border:0;color:var(--white);width:42px;height:42px;border-radius:50%;cursor:pointer}
 .burger span{display:block;width:16px;height:1.5px;background:currentColor;margin:4px auto;border-radius:2px}
-.drawer{position:fixed;inset:0;z-index:19;background:rgba(0,0,0,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
+.drawer{position:fixed;inset:0;z-index:19;background:rgba(0,0,0,.96);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
 .drawer[hidden]{display:none}
 .drawer a{font-family:var(--f-head);font-size:30px;text-decoration:none;color:var(--white);padding:8px 20px;border-radius:999px}
 
@@ -78,13 +79,13 @@ p{margin:0}
 .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--black)}
 #seq{position:absolute;inset:0;width:100%;height:100%;display:block}
 .shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,0) 34%,rgba(0,0,0,0) 66%,rgba(0,0,0,.72)),linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,0) 16%,rgba(0,0,0,0) 80%,rgba(0,0,0,.75))}
-.bars{position:absolute;left:0;right:0;height:0;background:var(--black);pointer-events:none;transition:height .9s cubic-bezier(.2,.7,.1,1);z-index:1}
+.bars{position:absolute;left:0;right:0;height:0;will-change:height;background:var(--black);pointer-events:none;transition:height .9s cubic-bezier(.2,.7,.1,1);z-index:1}
 .bars.t{top:0}.bars.b{bottom:0}
-.chapter{position:absolute;z-index:2;max-width:400px;display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(24px);will-change:opacity,transform;text-shadow:0 2px 30px rgba(0,0,0,.9)}
+.chapter{position:absolute;z-index:2;max-width:400px;display:flex;flex-direction:column;gap:16px;opacity:0;visibility:hidden;transform:translateY(24px);will-change:opacity,transform;text-shadow:0 2px 18px rgba(0,0,0,.85)}
 .chapter p{color:var(--soft)}
 .chapter.l{left:var(--gutter);top:50%;margin-top:-110px}
 .chapter.r{right:var(--gutter);top:50%;margin-top:-110px}
-.chapter.hero{left:var(--gutter);bottom:14vh;top:auto;margin:0;opacity:1;transform:none;max-width:460px}
+.chapter.hero{left:var(--gutter);bottom:14vh;top:auto;margin:0;opacity:1;visibility:visible;transform:none;max-width:460px}
 .data{display:flex;gap:28px;flex-wrap:wrap}
 .data div{display:flex;flex-direction:column}
 .data b{font-family:var(--f-head);font-weight:400;font-size:26px;color:var(--gold-hi);font-variant-numeric:tabular-nums}
@@ -92,14 +93,14 @@ p{margin:0}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:999px;background:linear-gradient(135deg,#e7cf9c,#b8894a);color:#120d06;text-decoration:none;font-size:15px;font-weight:500;transition:transform .25s,box-shadow .25s}
 .btn:hover,.btn:focus-visible{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,169,106,.3)}
-.btn.ghost{background:rgba(255,255,255,.06);color:var(--white);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+.btn.ghost{background:rgba(0,0,0,.35);color:var(--white);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
 .loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;background:var(--black);transition:opacity 1.2s;flex-direction:column;gap:18px}
 .loading img{width:120px;opacity:.9;animation:breathe 2.4s ease-in-out infinite}
 .loading span{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
 .loading.done{opacity:0;pointer-events:none}
 @keyframes breathe{50%{opacity:.4}}
 .progress{position:absolute;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));width:min(240px,50vw);transform:translateX(-50%);height:2px;border-radius:2px;background:rgba(255,255,255,.12);z-index:2;overflow:hidden}
-.progress i{display:block;height:100%;width:0;background:var(--gold)}
+.progress i{display:block;height:100%;width:100%;background:var(--gold);transform-origin:left;transform:scaleX(0)}
 .scrollcue{position:absolute;right:var(--gutter);bottom:14vh;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);font-size:12px;text-transform:uppercase}
 .scrollcue i{display:block;width:1px;height:56px;background:linear-gradient(var(--gold),transparent);animation:cue 2s ease-in-out infinite;transform-origin:top}
 @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -128,7 +129,7 @@ p{margin:0}
 .shutter{position:absolute;inset:0;overflow:hidden;border-radius:4px;background:#0b0907;box-shadow:0 40px 120px rgba(0,0,0,.7)}
 .shutter .ly{position:absolute;inset:0}
 .shutter .sl{position:absolute;left:0;right:0;overflow:hidden}
-.shutter .sl i{position:absolute;inset:0;background-repeat:no-repeat;will-change:transform}
+.shutter .sl i{position:absolute;inset:0;background-repeat:no-repeat}
 .shutter .sl b{position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.75));opacity:0;pointer-events:none}
 .shutter::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0) 60%,rgba(0,0,0,.45));pointer-events:none}
 .procart figcaption{position:absolute;left:18px;bottom:16px;z-index:2;font-size:13px;color:var(--white);text-shadow:0 1px 10px rgba(0,0,0,.8)}
@@ -463,6 +464,17 @@ p{margin:0}
   <small>© 2026 Gabriel &amp; Spirits Group. Talisman Tequila Añejo, 40% vol. Bevi responsabilmente.</small>
 </footer>
 
+<script src="assets/lenis.min.js"></script>
+<script>
+// ---------- smooth scroll (Lenis) ----------
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || typeof Lenis === 'undefined') return;
+  const lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 0.95, smoothWheel: true });
+  window.__lenis = lenis;
+  const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); }; requestAnimationFrame(raf);
+  document.addEventListener('click', (e) => { const a = e.target.closest('a[href^="#"]'); if (!a) return; const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); lenis.scrollTo(t, { offset: 0 }); } });
+})();
+</script>
 <script>
 // ---------- UI: header, drawer, copy, reveals, counters, tilt ----------
 (() => {
@@ -505,83 +517,72 @@ p{margin:0}
   });
 })();
 
-// ---------- Cycles frame sequence ----------
+// ---------- Cycles frame sequence (JPEG singoli, decodificati in anticipo) ----------
 (() => {
-  const N = 479, P = 240, FH = { d: 1080, m: 1280 };
-  const canvas = document.getElementById('seq'), ctx = canvas.getContext('2d');
+  const N = 479;
+  const canvas = document.getElementById('seq'), ctx = canvas.getContext('2d', { alpha: false, desynchronized: true });
   const stage = canvas.parentElement, cine = document.getElementById('cine');
   const loading = document.getElementById('loading'), ldtxt = document.getElementById('ldtxt');
   const chapters = [...document.querySelectorAll('.chapter')];
   const bar = document.getElementById('bar'), cue = document.getElementById('cue');
   const barT = document.getElementById('barT'), barB = document.getElementById('barB');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let set = innerWidth / innerHeight < 0.9 ? 'm' : 'd';
-  // each file packs two consecutive rendered frames stacked vertically
-  const packs = { d: new Array(P), m: new Array(P) };
-  const src = (s, k) => `assets/seq3/${s}/p_${String(k).padStart(3, '0')}.webp`;
+  const set = innerWidth / innerHeight < 0.9 ? 'm' : 'd';
+  const frames = new Array(N);
+  const src = (i) => `assets/seq4/${set}/f_${String(i + 1).padStart(4, '0')}.jpg`;
   let loaded = 0;
-  function load(s) {
-    const order = []; const seen = new Set();
-    for (const step of [8, 4, 2, 1]) for (let k = 0; k < P; k += step) if (!seen.has(k)) { seen.add(k); order.push(k); }
-    let q = 0, active = 0;
-    const next = () => {
-      while (active < 6 && q < order.length) {
-        const k = order[q++]; const img = new Image(); active++;
-        img.decoding = 'async';
-        img.onload = () => { packs[s][k] = img; active--; if (s === set) { loaded++; ldtxt.textContent = Math.round(loaded / P * 100) + '%'; if (loaded >= 20) loading.classList.add('done'); } next(); };
-        img.onerror = () => { active--; next(); };
-        img.src = src(s, k);
-      }
-    };
-    next();
-  }
-  load(set);
-  let w = 0, h = 0, drawn = '';
+  const order = []; const seen = new Set();
+  for (const step of [16, 8, 4, 2, 1]) for (let i = 0; i < N; i += step) if (!seen.has(i)) { seen.add(i); order.push(i); }
+  let q = 0, active = 0;
+  const next = () => {
+    while (active < 6 && q < order.length) {
+      const i = order[q++]; const img = new Image(); active++;
+      img.src = src(i);
+      const done = () => { frames[i] = img; active--; loaded++; ldtxt.textContent = Math.round(loaded / N * 100) + '%'; if (loaded >= 30) loading.classList.add('done'); drawn = -1; next(); };
+      img.decode().then(done, () => { active--; next(); });
+    }
+  };
+  next();
+  let w = 0, h = 0, drawn = -1;
   function resize() {
-    const dpr = Math.min(devicePixelRatio, 2);
     w = stage.clientWidth; h = stage.clientHeight;
-    canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.imageSmoothingQuality = 'high';
-    drawn = '';
+    // backing store capped to the frame resolution: sharper never, cheaper always
+    const k = Math.min(devicePixelRatio || 1, Math.sqrt(2.4e6 / (w * h)), 2);
+    canvas.width = Math.round(w * k); canvas.height = Math.round(h * k);
+    ctx.setTransform(k, 0, 0, k, 0, 0); ctx.imageSmoothingQuality = 'high';
+    drawn = -1;
   }
   addEventListener('resize', resize); resize();
-  const has = (i) => !!packs[set][i >> 1];
-  function nearest(i) { for (let d = 0; d < N; d++) { if (i - d >= 0 && has(i - d)) return i - d; if (i + d < N && has(i + d)) return i + d; } return -1; }
-  // sub-frame blending: between two rendered frames the canvas cross-dissolves by the exact scroll position
-  function put(i, a) {
-    const img = packs[set][i >> 1], fw = img.naturalWidth, fh = FH[set];
-    const s = Math.max(w / fw, h / fh), iw = fw * s, ih = fh * s;
-    ctx.globalAlpha = a; ctx.drawImage(img, 0, (i & 1) * fh, fw, fh, (w - iw) / 2, (h - ih) / 2, iw, ih); ctx.globalAlpha = 1;
-  }
+  function nearest(i) { for (let d = 0; d < N; d++) { if (i - d >= 0 && frames[i - d]) return i - d; if (i + d < N && frames[i + d]) return i + d; } return -1; }
   function draw(x) {
-    const f0 = Math.floor(x), f1 = Math.min(f0 + 1, N - 1), t = x - f0;
-    const i0 = nearest(f0); if (i0 < 0) return;
-    const b = i0 === f0 && has(f1) && f1 !== f0;
-    const key = i0 + ':' + (b ? t.toFixed(3) : '');
-    if (drawn === key) return;
-    ctx.fillStyle = '#000'; ctx.fillRect(0, 0, w, h);
-    put(i0, 1);
-    if (b && t > 0.002) put(f1, t);
-    drawn = key;
+    const i = nearest(Math.round(x)); if (i < 0 || i === drawn) return;
+    const img = frames[i], s = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+    const iw = img.naturalWidth * s, ih = img.naturalHeight * s;
+    ctx.drawImage(img, (w - iw) / 2, (h - ih) / 2, iw, ih);
+    drawn = i;
   }
   const progress = () => { const r = cine.getBoundingClientRect(); const span = cine.offsetHeight - innerHeight; return Math.min(Math.max(-r.top / span, 0), 1); };
-  let pS = 0, last = performance.now();
+  let pS = 0, last = performance.now(), lastBar = '';
   const closeups = [[0.36, 0.48], [0.56, 0.69]];
   function frame(now) {
     requestAnimationFrame(frame);
     const dt = Math.min((now - last) / 1000, 0.05); last = now;
+    const r = cine.getBoundingClientRect(); if (r.bottom < -100) return;
     const pT = progress();
-    pS += (pT - pS) * (reduce ? 1 : 1 - Math.pow(0.002, dt));
+    pS += (pT - pS) * (reduce || window.__lenis ? 1 : 1 - Math.pow(0.0005, dt));
+    if (Math.abs(pT - pS) < 0.00005) pS = pT;
     draw(pS * (N - 1));
     const close = closeups.some(([a, b]) => pS > a - 0.02 && pS < b + 0.02);
-    const bh = close && w > 900 ? '8vh' : '0'; barT.style.height = bh; barB.style.height = bh;
+    const bh = close && w > 900 ? '8vh' : '0'; if (bh !== lastBar) { lastBar = bh; barT.style.height = bh; barB.style.height = bh; }
     chapters.forEach((c) => {
       const a = +c.dataset.in, b = +c.dataset.out, f = 0.03;
-      let o = Math.max(Math.min(Math.min((pS - a) / f + (a === 0 ? 1 : 0), 1), Math.min((b - pS) / f, 1)), 0);
-      c.style.opacity = o.toFixed(3); c.style.transform = `translateY(${((1 - o) * 24).toFixed(1)}px)`;
+      const o = Math.max(Math.min(Math.min((pS - a) / f + (a === 0 ? 1 : 0), 1), Math.min((b - pS) / f, 1)), 0);
+      const os = o.toFixed(2); if (c._o === os) return; c._o = os;
+      c.style.opacity = os; c.style.transform = `translate3d(0,${((1 - o) * 24).toFixed(1)}px,0)`;
+      c.style.visibility = o > 0 ? 'visible' : 'hidden';
       c.style.pointerEvents = o > 0.5 ? 'auto' : 'none';
     });
-    bar.style.width = (pS * 100).toFixed(2) + '%';
+    bar.style.transform = `scaleX(${pS.toFixed(4)})`;
     cue.style.opacity = Math.max(0, 1 - pS * 20);
   }
   requestAnimationFrame(frame);
@@ -621,21 +622,24 @@ p{margin:0}
     const rect = sec.getBoundingClientRect(); const span = sec.offsetHeight - innerHeight;
     if (rect.bottom < -50 || rect.top > innerHeight + 50) return;
     const pT = clamp(-rect.top / span, 0, 0.9999);
-    pS = inited && !reduce ? pS + (pT - pS) * 0.14 : pT; inited = true;
+    pS = inited && !reduce && !window.__lenis ? pS + (pT - pS) * 0.14 : pT; inited = true;
     const f = pS * 9, idx = Math.min(Math.floor(f), 8);
     const stepW = steps[0].getBoundingClientRect().width + innerWidth * 0.06;
     const shift = innerWidth < 900 ? idx + ease(clamp((f - idx - 0.72) / 0.28)) : Math.max(f - 0.5, 0);
     track.style.transform = `translateX(${-shift * stepW}px)`;
     ticks.forEach((t, i) => { t.style.transform = `scaleX(${clamp(f - i)})`; });
     // serranda: ogni foto scende a lamelle, dall'alto verso il basso, legata allo scroll
+    const top = Math.max(0, Math.min(8, Math.floor(f - 0.2)));
     layers.forEach((L, k) => {
+      L.ly.style.display = k < top ? 'none' : '';
+      if (k < top) return;
       const t = k === 0 ? 1 : clamp((f - (k - 0.42)) / 0.62);
       const key = Math.round(t * 1000); if (key === L.last) return; L.last = key;
       L.ly.style.visibility = t <= 0 ? 'hidden' : 'visible';
       const st = 0.075, tot = 1 + st * (S - 1);
       L.sl.forEach(([i, e], j) => {
         const l = ease(clamp(t * tot - j * st));
-        i.style.transform = `translate3d(0,${((l - 1) * 100).toFixed(2)}%,0)`;
+        i.style.transform = l >= 1 ? 'none' : `translate3d(0,${((l - 1) * 100).toFixed(2)}%,0)`;
         e.style.opacity = (l > 0 && l < 1) ? (Math.sin(l * Math.PI) * 0.9).toFixed(2) : 0;
       });
       L.ly.style.transform = `scale(${(1.06 - 0.06 * ease(clamp((f - k + 0.4) / 1.4))).toFixed(4)})`;
@@ -698,7 +702,7 @@ p{margin:0}
     requestAnimationFrame(campLoop);
     const r = camp.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
     const span = camp.offsetHeight - innerHeight, pT = clamp(-r.top / span);
-    cS = reduce ? pT : cS + (pT - cS) * 0.1;
+    cS = reduce || window.__lenis ? pT : cS + (pT - cS) * 0.1;
     pmx += (mx - pmx) * 0.06; pmy += (my - pmy) * 0.06;
     cpin.style.perspectiveOrigin = `${(50 + pmx * 8).toFixed(2)}% ${(50 + pmy * 8).toFixed(2)}%`;
     const cam = clamp(cS / 0.96) * -ZF;

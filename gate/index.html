@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#000000">
+<title>Accesso riservato | Gabriel &amp; Spirits</title>
+<link rel="icon" href="/gate/gs_logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap">
+<style>
+:root{--gold:#c9a96a;--gold-hi:#e7cf9c;--line:rgba(214,196,154,.22);color-scheme:dark}
+*{box-sizing:border-box;letter-spacing:0;margin:0}
+html,body{height:100%;background:#000;color:#fff}
+body{font-family:"Inter Tight","Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;display:grid;place-items:center;padding:24px;background:radial-gradient(70% 60% at 50% 110%,#1a1108 0%,#000 70%)}
+main{width:min(380px,100%);display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center;animation:in 1.2s cubic-bezier(.2,.7,.1,1) both}
+@keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+img{width:220px;height:auto}
+.k{font-size:13px;font-weight:500;color:var(--gold);text-transform:uppercase}
+h1{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:32px;line-height:1.15}
+h1 em{color:var(--gold-hi)}
+p{color:#fff}
+form{width:100%;display:flex;flex-direction:column;gap:12px}
+input{width:100%;height:52px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#fff;font:inherit;font-size:16px;padding:0 22px;text-align:center;outline:none;transition:border-color .3s}
+input:focus{border-color:var(--gold)}
+button{height:52px;border:0;border-radius:999px;background:linear-gradient(135deg,#e7cf9c,#b8894a);color:#120d06;font:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:transform .25s,box-shadow .25s}
+button:hover,button:focus-visible{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,169,106,.3)}
+.err{color:#e7a08a;font-size:14px;min-height:22px}
+small{font-size:13px;color:#a39b8e}
+</style>
+</head>
+<body>
+<main>
+  <img src="/gate/gs_logo.webp" width="220" height="51" alt="Gabriel &amp; Spirits">
+  <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
+    <span class="k">Anteprima riservata</span>
+    <h1>Accesso <em>con password</em></h1>
+  </div>
+  <form method="post" action="/__auth/">
+    <input type="password" name="password" placeholder="Password" autocomplete="current-password" required autofocus aria-label="Password">
+    <input type="hidden" name="next" id="next" value="/">
+    <button type="submit">Entra</button>
+    <span class="err" id="err" role="alert"></span>
+  </form>
+  <small>© 2026 Gabriel &amp; Spirits Group</small>
+</main>
+<script>
+const q = new URLSearchParams(location.search);
+const n = q.get('next'); if (n && n.startsWith('/') && !n.startsWith('//')) document.getElementById('next').value = n;
+if (q.get('e')) document.getElementById('err').textContent = 'Password non corretta, riprova.';
+</script>
+</body>
+</html>
