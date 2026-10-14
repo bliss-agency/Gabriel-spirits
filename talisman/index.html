@@ -528,38 +528,74 @@ p{margin:0}
   const barT = document.getElementById('barT'), barB = document.getElementById('barB');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const set = innerWidth / innerHeight < 0.9 ? 'm' : 'd';
-  const frames = new Array(N);
+  const frames = new Array(N), state = new Uint8Array(N), bmp = new Array(N);
   const src = (i) => `assets/seq4/${set}/f_${String(i + 1).padStart(4, '0')}.jpg`;
-  let loaded = 0;
-  const order = []; const seen = new Set();
-  for (const step of [16, 8, 4, 2, 1]) for (let i = 0; i < N; i += step) if (!seen.has(i)) { seen.add(i); order.push(i); }
-  let q = 0, active = 0;
-  const next = () => {
-    while (active < 6 && q < order.length) {
-      const i = order[q++]; const img = new Image(); active++;
-      img.src = src(i);
-      const done = () => { frames[i] = img; active--; loaded++; ldtxt.textContent = Math.round(loaded / N * 100) + '%'; if (loaded >= 30) loading.classList.add('done'); drawn = -1; next(); };
-      img.decode().then(done, () => { active--; next(); });
+  const mob = set === 'm', AHEAD = mob ? 40 : 70, BEHIND = mob ? 16 : 30, WA = mob ? 14 : 26, WB = mob ? 6 : 10;
+  let cur = 0, active = 0, coarse = 0;
+  const coarseOrder = []; { const seen = new Set(); for (const step of [12, 6, 3, 1]) for (let i = 0; i < N; i += step) if (!seen.has(i)) { seen.add(i); coarseOrder.push(i); } }
+  // priorità: prima i frame subito avanti alla posizione attuale, poi quelli dietro, poi una passata rada su tutta la sequenza
+  function pick() {
+    for (let d = 0; d < AHEAD; d++) { const i = cur + d; if (i < N && !state[i]) return i; }
+    for (let d = 1; d < BEHIND; d++) { const i = cur - d; if (i >= 0 && !state[i]) return i; }
+    while (coarse < coarseOrder.length && state[coarseOrder[coarse]]) coarse++;
+    return coarse < coarseOrder.length ? coarseOrder[coarse] : -1;
+  }
+  function pump() {
+    while (active < 8) {
+      const i = pick(); if (i < 0) return;
+      state[i] = 1; active++;
+      const img = new Image(); img.src = src(i);
+      img.decode().then(() => { frames[i] = img; state[i] = 2; active--; warm(); progressUI(); pump(); }, () => { state[i] = 0; active--; setTimeout(pump, 400); });
     }
-  };
-  next();
-  let w = 0, h = 0, drawn = -1;
+  }
+  const FIRST = Math.min(N, mob ? 60 : 90);
+  function progressUI() {
+    if (loading.classList.contains('done')) return;
+    let k = 0; while (k < FIRST && state[k] === 2) k++;
+    ldtxt.textContent = Math.round(k / FIRST * 100) + '%';
+    if (k >= FIRST) loading.classList.add('done');
+  }
+  // finestra di frame già decodificati in memoria GPU attorno alla posizione: niente decodifica durante lo scroll
+  let warmBusy = false;
+  async function warm() {
+    if (warmBusy || typeof createImageBitmap !== 'function') return; warmBusy = true;
+    try {
+      for (let d = 0; d <= WA + WB; d++) {
+        const i = d <= WA ? cur + d : cur - (d - WA); if (i < 0 || i >= N) continue;
+        if (!bmp[i] && frames[i]) { try { bmp[i] = await createImageBitmap(frames[i]); } catch (e) { break; } }
+      }
+      for (let i = 0; i < N; i++) if (bmp[i] && (i < cur - WB * 2 || i > cur + WA * 2)) { bmp[i].close && bmp[i].close(); bmp[i] = null; }
+    } finally { warmBusy = false; }
+  }
+  pump();
+  let w = 0, h = 0, drawn = '';
   function resize() {
     w = stage.clientWidth; h = stage.clientHeight;
-    // backing store capped to the frame resolution: sharper never, cheaper always
     const k = Math.min(devicePixelRatio || 1, Math.sqrt(2.4e6 / (w * h)), 2);
     canvas.width = Math.round(w * k); canvas.height = Math.round(h * k);
     ctx.setTransform(k, 0, 0, k, 0, 0); ctx.imageSmoothingQuality = 'high';
-    drawn = -1;
+    drawn = '';
   }
   addEventListener('resize', resize); resize();
-  function nearest(i) { for (let d = 0; d < N; d++) { if (i - d >= 0 && frames[i - d]) return i - d; if (i + d < N && frames[i + d]) return i + d; } return -1; }
+  const ok = (i) => i >= 0 && i < N && state[i] === 2;
+  function lower(i) { for (let j = i; j >= 0; j--) if (ok(j)) return j; return -1; }
+  function upper(i) { for (let j = i; j < N; j++) if (ok(j)) return j; return -1; }
+  function put(i, a) {
+    const im = bmp[i] || frames[i], iw0 = im.width || im.naturalWidth, ih0 = im.height || im.naturalHeight;
+    const s = Math.max(w / iw0, h / ih0), iw = iw0 * s, ih = ih0 * s;
+    ctx.globalAlpha = a; ctx.drawImage(im, (w - iw) / 2, (h - ih) / 2, iw, ih); ctx.globalAlpha = 1;
+  }
+  // tra due frame disponibili la tela li fonde secondo la posizione esatta: il movimento resta continuo anche durante il caricamento
   function draw(x) {
-    const i = nearest(Math.round(x)); if (i < 0 || i === drawn) return;
-    const img = frames[i], s = Math.max(w / img.naturalWidth, h / img.naturalHeight);
-    const iw = img.naturalWidth * s, ih = img.naturalHeight * s;
-    ctx.drawImage(img, (w - iw) / 2, (h - ih) / 2, iw, ih);
-    drawn = i;
+    let a = lower(Math.floor(x)), b = upper(Math.ceil(x));
+    if (a < 0 && b < 0) return; if (a < 0) a = b; if (b < 0) b = a;
+    if (b - a > 4) { if (x - a < b - x) b = a; else a = b; }
+    const t = b > a ? (x - a) / (b - a) : 0;
+    const key = a + ':' + b + ':' + (b > a ? t.toFixed(2) : '');
+    if (key === drawn) return;
+    put(a, 1); if (b > a && t > 0.01) put(b, t);
+    drawn = key;
+    const c = Math.round(x); if (Math.abs(c - cur) > 2) { cur = c; pump(); warm(); }
   }
   const progress = () => { const r = cine.getBoundingClientRect(); const span = cine.offsetHeight - innerHeight; return Math.min(Math.max(-r.top / span, 0), 1); };
   let pS = 0, last = performance.now(), lastBar = '';
