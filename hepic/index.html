@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="it" data-v="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>HEPIC Tequila Blanco by Haze Hepi | Gabriel &amp; Spirits</title>
+<meta name="description" content="HEPIC Blanco by Haze Hepi: tequila 100% agave blu di Jalisco che unisce la tradizione messicana alla cultura Māori. 40% vol, 700 ml, doppia distillazione. Distribuita da Gabriel &amp; Spirits Group.">
+<meta property="og:title" content="HEPIC Tequila Blanco by Haze Hepi | Gabriel &amp; Spirits">
+<meta property="og:description" content="Tequila Blanco 100% agave blu di Jalisco, nata dall'incontro tra Messico e cultura Māori.">
+<meta property="og:image" content="assets/og.webp">
+<meta property="og:type" content="product">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/gs_logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "HEPIC Tequila Blanco by Haze Hepi",
+  "description": "Tequila Blanco 100% puro de agave blu di Jalisco, doppia distillazione, riposo massimo di due mesi. 40% vol, 700 ml.",
+  "image": "assets/og.webp",
+  "category": "Tequila Blanco",
+  "brand": { "@type": "Brand", "name": "HEPIC Tequila" },
+  "countryOfOrigin": "MX",
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Gradazione alcolica", "value": "40% vol" },
+    { "@type": "PropertyValue", "name": "Formato", "value": "700 ml" },
+    { "@type": "PropertyValue", "name": "NOM", "value": "1649" },
+    { "@type": "PropertyValue", "name": "Note di degustazione", "value": "Agave blu, erbe fresche, pepe, agrumi" }
+  ],
+  "offers": { "@type": "Offer", "seller": { "@type": "Organization", "name": "Gabriel & Spirits Group" } }
+}
+</script>
+<style>
+/* Layout: header; film Blender a scroll (nuvole, foresta, statua, bottiglia); il volto; processo; note; campagna in volo 3D; scheda; contatti */
+:root{
+  --black:#000; --line:rgba(255,255,255,.14);
+  --white:#fff; --soft:#ecebe9; --muted:#a9a7a3; --red:#d3222a; --red-hi:#ff5a4e; --silver:#cfd3d8;
+  --f-head:"Playfair Display",Georgia,"Times New Roman",serif;
+  --f-body:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --gutter:clamp(16px,5vw,80px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;letter-spacing:0}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:hidden}
+html{background:var(--black)}
+body{margin:0;background:var(--black);color:var(--white);font-family:var(--f-body);font-size:17px;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--red-hi);outline-offset:3px;border-radius:999px}
+h1,h2,h3{font-family:var(--f-head);font-weight:400;margin:0;line-height:1.12;text-wrap:balance;color:var(--white)}
+h1{font-size:clamp(34px,3.8vw,40px)}
+h2{font-size:clamp(28px,3vw,40px)}
+h3{font-size:22px}
+h1 em,h2 em{font-style:italic;color:var(--silver)}
+p{margin:0}
+.kicker{font-size:13px;font-weight:500;color:var(--red-hi);text-transform:uppercase}
+
+/* HEADER */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gutter) 14px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;transition:background .4s}
+.hdr.solid{background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.55))}
+.hdr nav{display:flex;align-items:center;gap:6px}
+.hdr nav.right{justify-content:flex-end}
+.hdr nav a{font-size:14px;font-weight:500;text-decoration:none;color:var(--soft);padding:9px 16px;border-radius:999px;transition:background .25s,color .25s}
+.hdr nav a:hover,.hdr nav a:focus-visible{background:rgba(255,255,255,.08);color:var(--white)}
+.hdr nav a[aria-current]{color:var(--red-hi)}
+.hdr .cta-pill{background:var(--red);color:#fff;padding:10px 22px;box-shadow:0 6px 24px rgba(211,34,42,.3)}
+.hdr .cta-pill:hover,.hdr .cta-pill:focus-visible{background:#e8343b;color:#fff}
+.hdr .logo{display:block;width:210px;height:auto;aspect-ratio:1214/283}
+.burger{display:none;background:rgba(255,255,255,.06);border:0;color:var(--white);width:42px;height:42px;border-radius:50%;cursor:pointer}
+.burger span{display:block;width:16px;height:1.5px;background:currentColor;margin:4px auto;border-radius:2px}
+.drawer{position:fixed;inset:0;z-index:19;background:rgba(0,0,0,.96);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
+.drawer[hidden]{display:none}
+.drawer a{font-family:var(--f-head);font-size:30px;text-decoration:none;color:var(--white);padding:8px 20px;border-radius:999px}
+
+/* FILM */
+.cine{position:relative;height:1300vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--black)}
+#seq,#seq2{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;background:#000;pointer-events:none}
+#seq2{visibility:hidden}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.7),rgba(0,0,0,0) 36%,rgba(0,0,0,0) 64%,rgba(0,0,0,.7)),linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,0) 16%,rgba(0,0,0,0) 78%,rgba(0,0,0,.75))}
+.chapter{position:absolute;z-index:2;max-width:420px;display:flex;flex-direction:column;gap:16px;opacity:0;visibility:hidden;transform:translateY(24px);will-change:opacity,transform;text-shadow:0 2px 18px rgba(0,0,0,.85)}
+.chapter p{color:var(--white)}
+.chapter.l{left:var(--gutter);top:50%;margin-top:-110px}
+.chapter.r{right:var(--gutter);top:50%;margin-top:-110px}
+.chapter.hero{left:var(--gutter);bottom:14vh;top:auto;margin:0;opacity:1;visibility:visible;transform:none;max-width:480px}
+.chapter.c{left:50%;top:auto;bottom:12vh;margin-left:-260px;max-width:520px;text-align:center;align-items:center}
+.data{display:flex;gap:28px;flex-wrap:wrap}
+.data div{display:flex;flex-direction:column}
+.data b{font-family:var(--f-head);font-weight:400;font-size:26px;color:var(--white);font-variant-numeric:tabular-nums}
+.data span{font-size:13px;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:999px;background:var(--red);color:#fff;text-decoration:none;font-size:15px;font-weight:500;transition:transform .25s,box-shadow .25s,background .25s}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px);background:#e8343b;box-shadow:0 10px 30px rgba(211,34,42,.35)}
+.btn.ghost{background:rgba(0,0,0,.35);color:var(--white);box-shadow:inset 0 0 0 1px rgba(255,255,255,.24)}
+.loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;background:var(--black);transition:opacity 1.2s;flex-direction:column;gap:18px}
+.loading img{width:120px;opacity:.9;animation:breathe 2.4s ease-in-out infinite}
+.loading span{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.loading.done{opacity:0;pointer-events:none}
+@keyframes breathe{50%{opacity:.4}}
+.progress{position:absolute;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));width:min(240px,50vw);transform:translateX(-50%);height:2px;border-radius:2px;background:rgba(255,255,255,.12);z-index:2;overflow:hidden}
+.progress i{display:block;height:100%;width:100%;background:var(--red-hi);transform-origin:left;transform:scaleX(0)}
+.alt{position:absolute;right:var(--gutter);top:calc(96px + env(safe-area-inset-top,0px));z-index:2;display:flex;flex-direction:column;align-items:flex-end;gap:2px;pointer-events:none;opacity:.9}
+.alt b{font-family:var(--f-head);font-weight:400;font-size:26px;font-variant-numeric:tabular-nums}
+.alt span{font-size:13px;color:var(--muted)}
+.scrollcue{position:absolute;right:var(--gutter);bottom:14vh;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);font-size:12px;text-transform:uppercase}
+.scrollcue i{display:block;width:1px;height:56px;background:linear-gradient(var(--red-hi),transparent);animation:cue 2s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* REVEAL */
+.rv .w{display:inline-block;opacity:.12;transform:translateY(.25em);transition:opacity .9s cubic-bezier(.2,.7,.1,1),transform .9s cubic-bezier(.2,.7,.1,1)}
+.rv.in .w{opacity:1;transform:none}
+.up{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.2,.7,.1,1),transform 1s cubic-bezier(.2,.7,.1,1)}
+.up.in{opacity:1;transform:none}
+
+/* IL VOLTO */
+.face{position:relative;padding:clamp(100px,10vw,160px) var(--gutter);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,100px);align-items:center;background:radial-gradient(70% 70% at 25% 50%,#140708,#000 70%)}
+.face figure{margin:0;position:relative;overflow:hidden;border-radius:3px;aspect-ratio:4/5}
+.face figure::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0) 62%,rgba(0,0,0,.92));pointer-events:none}
+.face figure img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;will-change:transform}
+.face .txt{display:flex;flex-direction:column;gap:20px;max-width:520px}
+.face .txt p{color:var(--white)}
+.quote{font-family:var(--f-head);font-style:italic;font-size:clamp(22px,2.2vw,28px);line-height:1.35;color:var(--white)}
+
+/* PROCESSO */
+.proc{padding:clamp(100px,9vw,150px) var(--gutter);background:#050505;display:flex;flex-direction:column;gap:64px}
+.proc .head{max-width:620px;display:flex;flex-direction:column;gap:14px}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px 40px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--line);padding-top:24px}
+.steps .n{font-family:var(--f-head);font-style:italic;font-size:40px;line-height:1;color:transparent;-webkit-text-stroke:1px var(--red-hi)}
+.steps p{color:var(--white);font-size:16px}
+
+/* NOTE */
+.notes{position:relative;padding:clamp(96px,9vw,140px) var(--gutter);background:#0b0b0b;overflow:hidden}
+.nwrap{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(40px,6vw,96px)}
+.ncol{flex:1 1 360px;max-width:460px;display:flex;flex-direction:column;gap:28px}
+.ncol .hd{display:flex;flex-direction:column;gap:14px}
+.nlist{display:flex;flex-direction:column;border-bottom:1px solid var(--line)}
+.nitem{display:grid;grid-template-columns:44px 1fr;align-items:baseline;gap:4px;width:100%;text-align:left;background:transparent;border:0;border-top:1px solid var(--line);padding:18px 0;color:var(--white);font-family:inherit;cursor:pointer;border-radius:0}
+.nitem .nn{font-size:13px;font-weight:600;color:rgba(255,255,255,.55);transition:color .3s}
+.nitem .nb{display:flex;flex-direction:column;gap:6px}
+.nitem .nm{font-family:var(--f-head);font-size:24px;line-height:1.15;transition:color .3s}
+.nitem .nd{font-size:16px;line-height:1.55;color:var(--white)}
+.nitem:hover .nm,.nitem[aria-pressed="true"] .nm,.nitem[aria-pressed="true"] .nn{color:var(--red-hi)}
+.nseg{display:flex;gap:8px;flex-wrap:wrap}
+.nseg button,.npill{min-height:44px;padding:10px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:transparent;color:var(--white);font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:all .3s}
+.nseg button[aria-pressed="true"],.npill[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.ndial{flex:1 1 440px;display:flex;justify-content:center;min-width:0}
+.dialbox{position:relative;width:100%;max-width:580px;aspect-ratio:1/1}
+.dialbox svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#nind{transform-origin:280px 280px;transition:transform 1s cubic-bezier(.65,0,.35,1)}
+.nglow{position:absolute;left:50%;top:50%;width:66%;height:66%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(211,34,42,.16) 0%,rgba(211,34,42,0) 68%);transition:background 1s ease;pointer-events:none}
+.nglow.lime{background:radial-gradient(circle,rgba(190,220,90,.14) 0%,rgba(190,220,90,0) 68%)}
+.ncenter{position:absolute;left:22%;right:22%;top:30%;bottom:30%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;pointer-events:none}
+.ncenter .big{font-family:var(--f-head);font-style:italic;font-size:clamp(30px,3.6vw,40px);line-height:1.1;animation:fadeUp .7s ease both}
+.ncenter span{font-size:14px;color:var(--white);max-width:240px}
+.ncenter small{font-size:13px;color:var(--muted)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.npill{position:absolute;transform:translate(-50%,-50%);padding:10px 18px;white-space:nowrap;background:#0b0b0b}
+@media (max-width:640px){.npill{font-size:14px;padding:8px 14px}}
+
+/* CAMPAGNA */
+.camp{position:relative;height:720vh;background:#000}
+.cpin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;perspective:1000px;perspective-origin:50% 50%}
+.cp{position:absolute;left:50%;top:50%;margin:0;will-change:transform,opacity;visibility:hidden;backface-visibility:hidden}
+.cp img{display:block;width:100%;height:auto;border-radius:3px;box-shadow:0 50px 120px rgba(0,0,0,.8)}
+.cp.fin{width:100vw;height:100vh;height:100svh}
+.cp.fin picture{display:block;width:100%;height:100%}
+.cp.fin img{width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none}
+.chead{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(560px,calc(100% - 32px));text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;z-index:5;pointer-events:none}
+.cfoot{position:absolute;left:var(--gutter);right:var(--gutter);bottom:calc(28px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;align-items:flex-end;z-index:5;pointer-events:none}
+.cfoot .cnum{font-family:var(--f-head);font-style:italic;font-size:22px;color:var(--white);font-variant-numeric:tabular-nums}
+.cfoot .cnum small{font-family:var(--f-body);font-style:normal;font-size:13px;color:var(--soft)}
+.cend{position:absolute;left:var(--gutter);bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:6;display:flex;flex-direction:column;gap:16px;max-width:460px;opacity:0;transform:translateY(20px);pointer-events:none;text-shadow:0 2px 24px rgba(0,0,0,.8)}
+.cvig{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(120% 90% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.7))}
+
+/* SCHEDA */
+.spec{padding:140px var(--gutter);background:linear-gradient(#000,#0a0606);display:flex;flex-direction:column;gap:56px}
+.spec .head{max-width:620px;display:flex;flex-direction:column;gap:14px}
+.specgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:56px 40px;perspective:900px}
+.sp{display:flex;flex-direction:column;gap:6px;transform-style:preserve-3d;transition:transform .2s}
+.sp svg{width:36px;height:36px;stroke:var(--red-hi);fill:none;stroke-width:1.1;margin-bottom:6px}
+.sp b{font-family:var(--f-head);font-weight:400;font-size:34px;color:var(--white);font-variant-numeric:tabular-nums;line-height:1.1}
+.sp span{font-size:14px;color:var(--muted)}
+
+/* CONTATTI */
+.contact{padding:140px var(--gutter);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end;background:radial-gradient(60% 80% at 80% 100%,#1c0708,#000 70%)}
+.contact .txt{display:flex;flex-direction:column;gap:20px}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.mail code{font-family:var(--f-head);font-size:28px;color:var(--white);user-select:all}
+.copy{background:rgba(255,255,255,.06);border:0;color:var(--soft);font:inherit;font-size:13px;padding:8px 16px;border-radius:999px;cursor:pointer}
+.copy:hover,.copy:focus-visible{background:rgba(255,255,255,.12);color:var(--white)}
+
+/* FOOTER */
+.ftr{padding:64px var(--gutter) calc(40px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:center;gap:28px;background:#000;border-top:1px solid var(--line);text-align:center}
+.ftr img{width:220px;height:auto}
+.ftr nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px}
+.ftr nav a{font-size:14px;text-decoration:none;color:var(--soft);padding:8px 16px;border-radius:999px}
+.ftr nav a:hover{background:rgba(255,255,255,.08)}
+.ftr small{font-size:13px;color:var(--muted)}
+
+@media (max-width:900px){
+  body{font-size:16px}
+  .hdr{grid-template-columns:auto 1fr auto}
+  .hdr nav.left a,.hdr nav.right a:not(.cta-pill){display:none}
+  .burger{display:block}
+  .hdr .logo{width:150px;margin:0 auto}
+  .hdr .cta-pill{padding:9px 16px;font-size:13px}
+  .chapter,.chapter.l,.chapter.r,.chapter.hero,.chapter.c{left:16px;right:16px;top:auto;bottom:calc(64px + env(safe-area-inset-bottom,0px));margin:0;max-width:none;text-align:left;align-items:flex-start}
+  .scrollcue,.alt{display:none}
+  .data b{font-size:22px}
+  .face,.contact{grid-template-columns:minmax(0,1fr)}
+  .face{padding:96px 16px}
+  .steps{grid-template-columns:minmax(0,1fr);gap:32px}
+  .proc{padding:96px 16px}
+  .notes{padding:96px 16px}
+  .specgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 24px}
+  .sp b{font-size:28px}
+  .spec,.contact{padding:100px 16px}
+  .mail code{font-size:22px}
+  .cend{top:calc(96px + env(safe-area-inset-top,0px));bottom:auto}
+  .cp.fin img{object-fit:contain}
+}
+@media (min-width:901px) and (max-width:1200px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.scrollcue i,.loading img{animation:none}.rv .w,.up{opacity:1;transform:none}.ncenter .big{animation:none}}
+</style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <nav class="left" aria-label="Menu principale">
+    <button class="burger" id="burger" type="button" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span></button>
+    <a href="https://www.gabriel-spirits.com/it">Home</a>
+    <a href="https://www.gabriel-spirits.com/it/brands" aria-current="page">Brands</a>
+    <a href="https://www.gabriel-spirits.com/it">La storia</a>
+  </nav>
+  <a href="https://www.gabriel-spirits.com/it" aria-label="Gabriel &amp; Spirits, home"><img class="logo" src="assets/gs_logo.webp" width="210" height="49" alt="Gabriel &amp; Spirits"></a>
+  <nav class="right" aria-label="Menu secondario">
+    <a href="https://www.gabriel-spirits.com/it">Team</a>
+    <a href="#degustazione">Degustazione</a>
+    <a class="cta-pill" href="#contatti">Contatti</a>
+  </nav>
+</header>
+<div class="drawer" id="drawer" hidden>
+  <a href="https://www.gabriel-spirits.com/it">Home</a>
+  <a href="https://www.gabriel-spirits.com/it/brands">Brands</a>
+  <a href="https://www.gabriel-spirits.com/it">La storia</a>
+  <a href="https://www.gabriel-spirits.com/it">Team</a>
+  <a href="#degustazione">Degustazione</a>
+  <a href="#contatti">Contatti</a>
+</div>
+
+<main>
+  <div class="cine" id="cine">
+    <div class="stage">
+      <video id="seq" muted playsinline preload="auto" disablepictureinpicture aria-hidden="true" tabindex="-1"></video><video id="seq2" muted playsinline preload="none" disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
+      <div class="shade"></div>
+      <div class="loading" id="loading"><img src="assets/gs_logo.webp" alt=""><span id="ldtxt">0%</span></div>
+
+      <article class="chapter hero" data-in="0" data-out="0.07">
+        <span class="kicker">HEPIC Tequila by Haze Hepi</span>
+        <h1>HEPIC <em>Blanco</em></h1>
+        <p>Tequila 100% agave blu di Jalisco, nata dall'incontro tra la tradizione messicana e la cultura Māori. Scorri e scendi nella foresta del guardiano.</p>
+      </article>
+      <article class="chapter r" data-in="0.10" data-out="0.24">
+        <span class="kicker">Oltre le nuvole</span>
+        <h2>Lo spirito <em>del guerriero</em></h2>
+        <p>HEPIC porta nel bicchiere la forza, il rispetto e il senso di appartenenza della cultura Māori, uniti alla tradizione tequilera di Jalisco.</p>
+      </article>
+      <article class="chapter l" data-in="0.36" data-out="0.50">
+        <span class="kicker">La foresta</span>
+        <h2>Un movimento <em>culturale</em></h2>
+        <p>Due mondi lontani condividono lo stesso legame con la terra, con le origini e con chi è venuto prima. HEPIC nasce da questo incontro.</p>
+      </article>
+      <article class="chapter r" data-in="0.58" data-out="0.72">
+        <span class="kicker">Il guardiano</span>
+        <h2>Haze <em>The Huntsman</em> Hepi</h2>
+        <p>Pugile professionista Māori di Christchurch e ambasciatore della sua cultura, Haze Hepi è il volto e l'anima del marchio.</p>
+      </article>
+      <article class="chapter l" data-in="0.80" data-out="0.90">
+        <span class="kicker">Il cuore della pietra</span>
+        <h2>Purezza <em>Blanco</em></h2>
+        <p>Riposo massimo di due mesi, oppure imbottigliamento subito dopo la distillazione: l'agave blu resta viva e protagonista.</p>
+      </article>
+      <article class="chapter l" data-in="0.95" data-out="1.1">
+        <span class="kicker">HEPIC Blanco</span>
+        <h2>La tequila nella sua forma <em>più autentica</em></h2>
+        <div class="data"><div><b>40% vol</b><span>Gradazione</span></div><div><b>700 ml</b><span>Formato</span></div><div><b>100%</b><span>Agave blu</span></div></div>
+        <div class="cta"><a class="btn" href="#degustazione">Le note</a><a class="btn ghost" href="#contatti">Diventa partner</a></div>
+      </article>
+      <div class="alt" id="alt" aria-hidden="true"><b id="altv">1.500 m</b><span>Quota</span></div>
+      <div class="scrollcue" id="cue"><i></i>Scorri</div>
+      <div class="progress"><i id="bar"></i></div>
+    </div>
+  </div>
+
+  <section class="face" id="haze" aria-labelledby="face-t">
+    <figure class="up"><img id="faceImg" src="assets/camp/c05_huntsman.webp" width="1080" height="1350" alt="Haze Hepi tra le felci della foresta accanto alla bottiglia di HEPIC Blanco" loading="lazy" decoding="async"></figure>
+    <div class="txt">
+      <span class="kicker">Il volto di HEPIC</span>
+      <h2 id="face-t" class="rv">Haze Hepi, <em>The Huntsman</em></h2>
+      <p class="up">Pugile professionista nato a Christchurch, in Nuova Zelanda, Haze Hepi porta sul ring e nella vita il patrimonio della sua gente. Con HEPIC quel patrimonio incontra l'agave blu di Jalisco.</p>
+      <p class="quote up">Forza, rispetto, radici. Tre valori che il popolo Māori e la tradizione messicana condividono da sempre.</p>
+    </div>
+  </section>
+
+  <section class="proc" id="processo" aria-labelledby="proc-t">
+    <div class="head"><span class="kicker">Processo produttivo</span><h2 id="proc-t" class="rv">Dall'agave <em>alla bottiglia</em></h2></div>
+    <ol class="steps">
+      <li class="up"><span class="n">01</span><h3>Raccolta a mano</h3><p>I jimadores raccolgono l'agave blu a piena maturazione e ne ricavano la piña, il cuore ricco di zuccheri.</p></li>
+      <li class="up"><span class="n">02</span><h3>Cottura lenta</h3><p>Le piñas cuociono lentamente nei forni tradizionali, che ne sviluppano la dolcezza naturale.</p></li>
+      <li class="up"><span class="n">03</span><h3>Doppia distillazione</h3><p>Due passaggi in alambicco per un distillato pulito, preciso e fedele alla materia prima.</p></li>
+      <li class="up"><span class="n">04</span><h3>Riposo breve</h3><p>Al massimo due mesi, oppure direttamente in bottiglia dopo la distillazione.</p></li>
+    </ol>
+  </section>
+
+  <section class="notes" id="degustazione" aria-labelledby="notes-t">
+    <div class="nwrap">
+      <div class="ncol">
+        <div class="hd">
+          <span class="kicker">Degustazione</span>
+          <h2 id="notes-t" class="rv">Le note <em>di HEPIC</em></h2>
+          <p>Vivace e leggermente speziata, con un finale pulito e pepato. Scegli una nota sulla ruota o nella lista.</p>
+        </div>
+        <div class="nlist" role="list">
+          <button class="nitem" type="button" data-i="0" aria-pressed="true"><span class="nn">01</span><span class="nb"><span class="nm">Agave blu</span><span class="nd">Il cuore vegetale e dolce che apre il sorso.</span></span></button>
+          <button class="nitem" type="button" data-i="1" aria-pressed="false"><span class="nn">02</span><span class="nb"><span class="nm">Erbe fresche</span><span class="nd">Una freschezza verde che accompagna il naso.</span></span></button>
+          <button class="nitem" type="button" data-i="2" aria-pressed="false"><span class="nn">03</span><span class="nb"><span class="nm">Pepe</span><span class="nd">La nota speziata che porta fino al finale.</span></span></button>
+          <button class="nitem" type="button" data-i="3" aria-pressed="false"><span class="nn">04</span><span class="nb"><span class="nm">Agrumi</span><span class="nd">Scorza brillante, con un tocco minerale e terroso.</span></span></button>
+        </div>
+        <div class="nseg" aria-label="Modalità di servizio">
+          <button type="button" data-srv="0" aria-pressed="true">Liscia</button>
+          <button type="button" data-srv="1" aria-pressed="false">In Margarita</button>
+        </div>
+      </div>
+      <div class="ndial">
+        <div class="dialbox" id="dialbox">
+          <svg viewBox="0 0 560 560" aria-hidden="true">
+            <circle cx="280" cy="280" r="262" fill="none" stroke="rgba(255,255,255,0.10)"/>
+            <g id="nticks"></g>
+            <g id="nsegs" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linecap="round"></g>
+            <circle cx="280" cy="280" r="188" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.12)" stroke-dasharray="2 7"/>
+            <g id="nind"><path id="nindArc" fill="none" stroke="#ff5a4e" stroke-width="3" stroke-linecap="round"/><circle cx="280" cy="18" r="5" fill="#ff5a4e"/><line x1="280" y1="30" x2="280" y2="44" stroke="#ff5a4e" stroke-width="1.5"/></g>
+          </svg>
+          <div class="nglow" id="nglow"></div>
+          <div class="ncenter" aria-live="polite"><b class="big" id="ncName">Agave blu</b><span id="ncSrv">Liscia, a temperatura ambiente, per sentire l'agave in purezza.</span><small id="ncSub">01 / 04</small></div>
+          <button class="npill" type="button" data-i="0" aria-pressed="true" style="left:50%;top:7%">Agave blu</button>
+          <button class="npill" type="button" data-i="1" aria-pressed="false" style="left:93%;top:50%">Erbe fresche</button>
+          <button class="npill" type="button" data-i="2" aria-pressed="false" style="left:50%;top:93%">Pepe</button>
+          <button class="npill" type="button" data-i="3" aria-pressed="false" style="left:7%;top:50%">Agrumi</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="camp" id="campagna" aria-labelledby="camp-t">
+    <div class="cpin" id="cpin">
+      <div class="chead" id="chead">
+        <span class="kicker">La campagna</span>
+        <h2 id="camp-t">Il mondo <em>di HEPIC</em></h2>
+        <p>Dalla foresta all'oceano, il racconto del guerriero. Scorri ed entra nelle immagini.</p>
+      </div>
+      <figure class="cp"><img src="assets/camp/c01_mano.webp" width="1080" height="1350" alt="Una mano di pietra regge la bottiglia di HEPIC sopra una valle con cascate" loading="lazy" decoding="async"></figure>
+      <figure class="cp"><img src="assets/camp/c02_tempo.webp" width="1080" height="1350" alt="Un guerriero guarda il sole sorgere sulla foresta, campagna Where time becomes spirit" loading="lazy" decoding="async"></figure>
+      <figure class="cp"><img src="assets/camp/c03_untamed.webp" width="1080" height="1350" alt="Un guerriero davanti a una cascata e a una gigantesca bottiglia di HEPIC, campagna Discover the untamed" loading="lazy" decoding="async"></figure>
+      <figure class="cp"><img src="assets/camp/c04_surface.webp" width="1080" height="1350" alt="Il volto tatuato di Haze Hepi che emerge dall'acqua, campagna Beyond the surface" loading="lazy" decoding="async"></figure>
+      <figure class="cp"><img src="assets/camp/c05_huntsman.webp" width="1080" height="1350" alt="Haze Hepi con la bottiglia di HEPIC Blanco" loading="lazy" decoding="async"></figure>
+      <figure class="cp"><img src="assets/camp/c06_roar.webp" width="1080" height="1350" alt="Haze Hepi nella foresta con la bottiglia, campagna The roar of the forest" loading="lazy" decoding="async"></figure>
+      <figure class="cp fin"><picture><source media="(max-aspect-ratio: 9/10)" srcset="assets/camp/c04_surface.webp"><img src="assets/camp/c00_cover.webp" srcset="assets/camp/c00_cover_sm.webp 1200w, assets/camp/c00_cover.webp 1920w" sizes="100vw" width="1920" height="1080" alt="Haze Hepi emerge dall'oceano in tempesta, campagna Beyond the surface" loading="lazy" decoding="async"></picture></figure>
+      <div class="cvig" aria-hidden="true"></div>
+      <div class="cend" id="cend">
+        <span class="kicker">HEPIC Tequila by Haze Hepi</span>
+        <p>Distribuita da Gabriel &amp; Spirits Group nei mercati internazionali selezionati.</p>
+        <div class="cta"><a class="btn" href="#contatti">Diventa partner</a></div>
+      </div>
+      <div class="cfoot" aria-hidden="true"><span class="cnum" id="cnum">01 <small>/ 06</small></span><span class="kicker">Campagna HEPIC</span></div>
+    </div>
+  </section>
+
+  <section class="spec" aria-labelledby="spec-t">
+    <div class="head"><span class="kicker">Scheda tecnica</span><h2 id="spec-t" class="rv">HEPIC <em>Blanco</em></h2></div>
+    <div class="specgrid">
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 33V15M18 15C13 10 8 9 3 10c4 2 9 5 15 5zM18 15c5-5 10-6 15-5-4 2-9 5-15 5zM18 17C14 11 14 6 18 2c4 4 4 9 0 15z"/></svg><b data-count="100" data-suffix="%">100%</b><span>Puro de agave blu</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M13 3h10v6l4 6v18H9V15l4-6z"/><path d="M9 22h18"/></svg><b data-count="40" data-suffix="% vol">40% vol</b><span>Gradazione, 80 proof</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><rect x="7" y="10" width="22" height="22" rx="3"/><path d="M14 10V4h8v6"/></svg><b data-count="700" data-suffix=" ml">700 ml</b><span>Formato</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14"/><path d="M18 9v9l6 4"/></svg><b data-count="2" data-prefix="≤ " data-suffix=" mesi">≤ 2 mesi</b><span>Riposo massimo</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M12 4h12M14 4v8l-6 8v12h20V20l-6-8V4"/><path d="M8 24h20"/></svg><b>Doppia</b><span>Distillazione</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 33s-11-10-11-18a11 11 0 0122 0c0 8-11 18-11 18z"/><circle cx="18" cy="15" r="4"/></svg><b>Jalisco</b><span>Messico</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14"/><path d="M11 18l5 5 9-10"/></svg><b>NOM 1649</b><span>Denominazione di origine protetta</span></div>
+      <div class="sp"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14"/><path d="M4 18h28M18 4c-5 4-5 24 0 28M18 4c5 4 5 24 0 28"/></svg><b>G&amp;S Group</b><span>Distribuzione</span></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contatti" aria-labelledby="contact-t">
+    <div class="txt">
+      <span class="kicker">Distribuzione e partnership</span>
+      <h2 id="contact-t" class="rv">Contatti</h2>
+      <p>Distributori, hotellerie di lusso, ristorazione, operatori Ho.Re.Ca., imprenditori e partner interessati a distribuzione, partnership o franchising possono scriverci.</p>
+    </div>
+    <div class="txt">
+      <div class="mail"><code id="mail">info@gabriel-spirits.com</code><button class="copy" id="copyMail" type="button">Copia indirizzo</button></div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <img src="assets/gs_logo.webp" width="220" height="51" alt="Gabriel &amp; Spirits">
+  <nav aria-label="Footer">
+    <a href="https://www.gabriel-spirits.com/it">Home</a><a href="https://www.gabriel-spirits.com/it/brands">Brands</a><a href="/talisman/">Talisman</a><a href="https://www.gabriel-spirits.com/it">Team</a><a href="#contatti">Contatti</a>
+  </nav>
+  <small>© 2026 Gabriel &amp; Spirits Group. HEPIC Tequila Blanco, 40% vol. Bevi responsabilmente.</small>
+</footer>
+
+<script src="assets/lenis.min.js"></script>
+<script>
+// ---------- smooth scroll (Lenis) ----------
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || typeof Lenis === 'undefined') return;
+  const lenis = new Lenis({ lerp: 0.06, wheelMultiplier: 0.85, touchMultiplier: 1, smoothWheel: true });
+  window.__lenis = lenis;
+  const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); }; requestAnimationFrame(raf);
+  document.addEventListener('click', (e) => { const a = e.target.closest('a[href^="#"]'); if (!a) return; const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); lenis.scrollTo(t, { offset: 0 }); } });
+})();
+</script>
+<script>
+// ---------- UI: header, drawer, copy, reveals, counters, tilt, parallax ----------
+(() => {
+  const hdr = document.getElementById('hdr');
+  addEventListener('scroll', () => hdr.classList.toggle('solid', scrollY > 40), { passive: true });
+  const burger = document.getElementById('burger'), drawer = document.getElementById('drawer');
+  burger.addEventListener('click', () => { const o = drawer.hidden; drawer.hidden = !o; burger.setAttribute('aria-expanded', String(o)); });
+  drawer.addEventListener('click', (e) => { if (e.target.tagName === 'A') { drawer.hidden = true; burger.setAttribute('aria-expanded', 'false'); } });
+  const copyBtn = document.getElementById('copyMail');
+  copyBtn.addEventListener('click', () => {
+    const el = document.getElementById('mail');
+    const sel = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    try { navigator.clipboard.writeText(el.textContent).then(() => { copyBtn.textContent = 'Copiato'; }, sel); } catch (e) { sel(); }
+  });
+  document.querySelectorAll('.rv').forEach((h) => {
+    const walk = (node) => [...node.childNodes].forEach((c) => {
+      if (c.nodeType === 3) { const frag = document.createDocumentFragment(); c.textContent.split(/(\s+)/).forEach((t) => { if (/^\s+$/.test(t) || !t) frag.append(t); else { const s = document.createElement('span'); s.className = 'w'; s.textContent = t; frag.append(s); } }); c.replaceWith(frag); }
+      else if (c.nodeType === 1) walk(c);
+    });
+    walk(h);
+    [...h.querySelectorAll('.w')].forEach((w, i) => { w.style.transitionDelay = (i * 70) + 'ms'; });
+  });
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.3 });
+  document.querySelectorAll('.rv,.up').forEach((h) => io.observe(h));
+  document.querySelectorAll('.steps .up').forEach((li, i) => { li.style.transitionDelay = (i * 120) + 'ms'; });
+  const fmt = (n) => n.toLocaleString('it-IT');
+  const co = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return; co.unobserve(e.target);
+    const el = e.target, to = +el.dataset.count, pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+    const t0 = performance.now(), dur = 1600;
+    const tick = (now) => { const t = Math.min((now - t0) / dur, 1), k = 1 - Math.pow(1 - t, 4); el.textContent = pre + fmt(Math.round(to * k)) + suf; if (t < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }), { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach((el) => co.observe(el));
+  document.querySelectorAll('.sp').forEach((c) => {
+    c.addEventListener('pointermove', (e) => { const r = c.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5; c.style.transform = `rotateY(${x * 18}deg) rotateX(${-y * 18}deg) translateZ(10px)`; });
+    c.addEventListener('pointerleave', () => { c.style.transform = ''; });
+  });
+  // parallasse leggera sulla foto di Haze
+  const img = document.getElementById('faceImg'), fig = img.parentElement;
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const loop = () => { requestAnimationFrame(loop); const r = fig.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return; const k = (r.top + r.height / 2 - innerHeight / 2) / innerHeight; img.style.transform = `translate3d(0,${(k * -6).toFixed(2)}%,0)`; };
+    requestAnimationFrame(loop);
+  }
+})();
+
+// ---------- Film Blender come video all-intra scrubbato allo scroll ----------
+(() => {
+  const N = 900, FPS = 30;
+  const cine = document.getElementById('cine');
+  const loading = document.getElementById('loading'), ldtxt = document.getElementById('ldtxt');
+  const chapters = [...document.querySelectorAll('.chapter')];
+  const bar = document.getElementById('bar'), cue = document.getElementById('cue');
+  const alt = document.getElementById('alt'), altv = document.getElementById('altv');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const set = innerWidth / innerHeight < 0.9 ? 'm' : 'd';
+  const V = document.documentElement.dataset.v || '1';
+  const SRC = `assets/video/hepic_${set}_v${V}.mp4`;
+  let vid = document.getElementById('seq'); const spare = document.getElementById('seq2');
+  vid.poster = spare.poster = `assets/video/poster_${set}_v${V}.webp`;
+  vid.src = SRC;
+  const unlock = () => { const p = vid.play(); if (p && p.then) p.then(() => vid.pause(), () => {}); };
+  vid.addEventListener('loadeddata', () => { loading.classList.add('done'); unlock(); }, { once: true });
+  setTimeout(() => loading.classList.add('done'), 6000);
+  let busy = false, pending = null, asked = -1;
+  function seek(t) { if (busy) { pending = t; return; } busy = true; asked = t; vid.currentTime = t; }
+  function onSeeked() { busy = false; if (pending !== null) { const t = pending; pending = null; if (Math.abs(t - asked) > 0.001) seek(t); } }
+  vid.addEventListener('seeked', onSeeked);
+  (async () => {
+    try {
+      const res = await fetch(SRC); if (!res.ok || !res.body) return;
+      const total = +res.headers.get('content-length') || 0; const reader = res.body.getReader(); const parts = []; let got = 0;
+      for (;;) { const { done, value } = await reader.read(); if (done) break; parts.push(value); got += value.length; if (total && !loading.classList.contains('done')) ldtxt.textContent = Math.round(got / total * 100) + '%'; }
+      const url = URL.createObjectURL(new Blob(parts, { type: 'video/mp4' }));
+      spare.preload = 'auto'; spare.src = url;
+      await new Promise((r) => spare.addEventListener('loadeddata', r, { once: true }));
+      await new Promise((r) => { spare.addEventListener('seeked', r, { once: true }); spare.currentTime = vid.currentTime; });
+      spare.style.visibility = 'visible'; vid.style.visibility = 'hidden';
+      vid.removeEventListener('seeked', onSeeked); spare.addEventListener('seeked', onSeeked);
+      const old = vid; vid = spare; busy = false; pending = null; asked = -1;
+      setTimeout(() => { old.removeAttribute('src'); old.load(); }, 500);
+    } catch (e) { /* resta lo streaming diretto */ }
+  })();
+  function draw(x) {
+    const t = (Math.min(Math.max(Math.round(x), 0), N - 1) + 0.5) / FPS;
+    if (Math.abs(t - asked) > 0.001 || (pending !== null && Math.abs(t - pending) > 0.001)) seek(t);
+  }
+  // quota della camera nel film (metri), per l'indicatore laterale
+  const ALT = [[0, 1500], [0.155, 1250], [0.29, 790], [0.4, 330], [0.52, 160], [0.64, 125], [0.73, 115], [0.82, 80], [0.89, 74], [0.94, 68], [1, 67]];
+  const altAt = (p) => { for (let i = 1; i < ALT.length; i++) { if (p <= ALT[i][0]) { const [a, va] = ALT[i - 1], [b, vb] = ALT[i]; const k = (p - a) / (b - a); return va + (vb - va) * (k * k * (3 - 2 * k)); } } return 67; };
+  const progress = () => { const r = cine.getBoundingClientRect(); const span = cine.offsetHeight - innerHeight; return Math.min(Math.max(-r.top / span, 0), 1); };
+  let pS = 0, last = performance.now(), lastAlt = '';
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const dt = Math.min((now - last) / 1000, 0.05); last = now;
+    if (cine.getBoundingClientRect().bottom < -100) return;
+    const pT = progress();
+    pS += (pT - pS) * (reduce ? 1 : 1 - Math.exp(-dt / 0.32));
+    if (Math.abs(pT - pS) < 0.00002) pS = pT;
+    draw(pS * (N - 1));
+    chapters.forEach((c) => {
+      const a = +c.dataset.in, b = +c.dataset.out, f = 0.03;
+      const o = Math.max(Math.min(Math.min((pS - a) / f + (a === 0 ? 1 : 0), 1), Math.min((b - pS) / f, 1)), 0);
+      const os = o.toFixed(2); if (c._o === os) return; c._o = os;
+      c.style.opacity = os; c.style.transform = `translate3d(0,${((1 - o) * 24).toFixed(1)}px,0)`;
+      c.style.visibility = o > 0 ? 'visible' : 'hidden';
+      c.style.pointerEvents = o > 0.5 ? 'auto' : 'none';
+    });
+    const av = Math.round(altAt(pS)).toLocaleString('it-IT') + ' m'; if (av !== lastAlt) { lastAlt = av; altv.textContent = av; }
+    alt.style.opacity = Math.min(1, pS * 30) * Math.max(0, Math.min(1, (0.9 - pS) / 0.04));
+    bar.style.transform = `scaleX(${pS.toFixed(4)})`;
+    cue.style.opacity = Math.max(0, 1 - pS * 20);
+  }
+  requestAnimationFrame(frame);
+})();
+
+// ---------- Ruota di degustazione + campagna in volo ----------
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, a = 0, b = 1) => Math.min(Math.max(v, a), b);
+  const NOTE = ['Agave blu', 'Erbe fresche', 'Pepe', 'Agrumi'], K = NOTE.length, STEP = 360 / K;
+  const SRV = ['Liscia, a temperatura ambiente, per sentire l\'agave in purezza.', 'In Margarita, con lime fresco: la nota pepata tiene testa all\'agrume.'];
+  const c = 280, pt = (deg, r) => { const a = deg * Math.PI / 180; return [(c + r * Math.cos(a)).toFixed(2), (c + r * Math.sin(a)).toFixed(2)]; };
+  const arc = (a1, a2, r) => { const p1 = pt(a1, r), p2 = pt(a2, r); return `M${p1[0]} ${p1[1]} A${r} ${r} 0 0 1 ${p2[0]} ${p2[1]}`; };
+  const NS = 'http://www.w3.org/2000/svg';
+  const gt = document.getElementById('nticks');
+  for (let k = 0; k < 96; k++) { const deg = k * 3.75 - 90, major = k % 24 === 0, a1 = pt(deg, major ? 240 : 246), b1 = pt(deg, 252); const l = document.createElementNS(NS, 'line'); l.setAttribute('x1', a1[0]); l.setAttribute('y1', a1[1]); l.setAttribute('x2', b1[0]); l.setAttribute('y2', b1[1]); l.setAttribute('stroke', major ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.16)'); gt.append(l); }
+  const gs = document.getElementById('nsegs');
+  for (let k = 0; k < K; k++) { const mid = -90 + STEP * k; const p = document.createElementNS(NS, 'path'); p.setAttribute('d', arc(mid - STEP / 2 + 9, mid + STEP / 2 - 9, 228)); gs.append(p); }
+  document.getElementById('nindArc').setAttribute('d', arc(-90 - STEP / 2 + 9, -90 + STEP / 2 - 9, 228));
+  const ind = document.getElementById('nind'), glow = document.getElementById('nglow');
+  const items = [...document.querySelectorAll('.nitem')], pills = [...document.querySelectorAll('.npill')], segBtns = [...document.querySelectorAll('.nseg button')];
+  let nameEl = document.getElementById('ncName'); const srvEl = document.getElementById('ncSrv'), subEl = document.getElementById('ncSub');
+  let sel = 0, rot = 0, srv = 0, touched = false;
+  function go(i, byUser) {
+    let d = ((i - sel) % K + K) % K; if (d > K / 2) d -= K;
+    rot += d * STEP; sel = i; if (byUser) touched = true;
+    const nb = nameEl.cloneNode(); nb.textContent = NOTE[sel]; nameEl.replaceWith(nb); nameEl = nb;
+    ind.style.transform = `rotate(${rot}deg)`;
+    items.forEach((b, k) => b.setAttribute('aria-pressed', String(k === sel)));
+    pills.forEach((b, k) => b.setAttribute('aria-pressed', String(k === sel)));
+    subEl.textContent = `0${sel + 1} / 0${K}`;
+  }
+  [...items, ...pills].forEach((b) => b.addEventListener('click', () => go(+b.dataset.i, true)));
+  segBtns.forEach((b) => b.addEventListener('click', () => { srv = +b.dataset.srv; touched = true; segBtns.forEach((x) => x.setAttribute('aria-pressed', String(+x.dataset.srv === srv))); glow.classList.toggle('lime', srv === 1); srvEl.textContent = SRV[srv]; }));
+  let dialOn = false; new IntersectionObserver(([e]) => { dialOn = e.isIntersecting; }, { threshold: 0.3 }).observe(document.getElementById('dialbox'));
+  if (!reduce) setInterval(() => { if (!touched && dialOn) go((sel + 1) % K, false); }, 4800);
+
+  // CAMPAGNA
+  const camp = document.getElementById('campagna'), cpin = document.getElementById('cpin');
+  const figs = [...camp.querySelectorAll('.cp')], chead = document.getElementById('chead'), cend = document.getElementById('cend'), cnum = document.getElementById('cnum');
+  const D = 1150, Z0 = 2900, NI = figs.length - 1, ZF = -((NI - 1) * D + Z0 + D * 1.1);
+  let layout = [];
+  function lay() {
+    const W = innerWidth, H = innerHeight, mob = W < 760;
+    layout = figs.map((fg, i) => {
+      if (i === NI) return { x: 0, y: 0, z: ZF, w: W };
+      const side = i % 2 ? 1 : -1;
+      const w = mob ? W * 0.66 : Math.min(W * 0.27, 440);
+      const x = side * (mob ? W * 0.16 : W * 0.24);
+      const y = [-0.1, 0.08, -0.04, 0.12, -0.12, 0.04][i % 6] * H;
+      return { x, y, z: -(i * D + Z0), w };
+    });
+    figs.forEach((fg, i) => { if (i < NI) fg.style.width = layout[i].w + 'px'; });
+  }
+  addEventListener('resize', lay); lay();
+  let cS = 0, mx = 0, my = 0, pmx = 0, pmy = 0, cIdx = -1;
+  cpin.addEventListener('pointermove', (e) => { mx = e.clientX / innerWidth - 0.5; my = e.clientY / innerHeight - 0.5; });
+  function campLoop() {
+    requestAnimationFrame(campLoop);
+    const r = camp.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+    const span = camp.offsetHeight - innerHeight, pT = clamp(-r.top / span);
+    cS = reduce ? pT : cS + (pT - cS) * 0.08;
+    pmx += (mx - pmx) * 0.06; pmy += (my - pmy) * 0.06;
+    cpin.style.perspectiveOrigin = `${(50 + pmx * 8).toFixed(2)}% ${(50 + pmy * 8).toFixed(2)}%`;
+    const cam = clamp(cS / 0.96) * -ZF;
+    chead.style.opacity = clamp(1 - cS / 0.06).toFixed(3);
+    chead.style.transform = `translate(-50%,-50%) scale(${(1 + cS * 3).toFixed(3)})`;
+    let near = NI, best = 1e9;
+    figs.forEach((fg, i) => {
+      const L = layout[i], z = L.z + cam;
+      if (i === NI) {
+        const o = clamp((z + 2900) / 1500);
+        fg.style.visibility = o > 0 ? 'visible' : 'hidden';
+        fg.style.opacity = o.toFixed(3);
+        fg.style.transform = `translate(-50%,-50%) translate3d(0,0,${Math.min(z, 0).toFixed(1)}px)`;
+        return;
+      }
+      const o = clamp((z + 2700) / 1100) * clamp((620 - z) / 380);
+      if (o <= 0) { fg.style.visibility = 'hidden'; return; }
+      fg.style.visibility = 'visible'; fg.style.opacity = o.toFixed(3);
+      fg.style.transform = `translate(-50%,-50%) translate3d(${L.x.toFixed(1)}px,${L.y.toFixed(1)}px,${z.toFixed(1)}px) rotateY(${(-Math.sign(L.x) * clamp(z / 1400, -1, 1) * 8).toFixed(2)}deg)`;
+      const dz = Math.abs(z + 300); if (dz < best) { best = dz; near = i; }
+    });
+    const endO = clamp((cS - 0.93) / 0.05);
+    cend.style.opacity = endO.toFixed(3); cend.style.transform = `translateY(${((1 - endO) * 20).toFixed(1)}px)`; cend.style.pointerEvents = endO > 0.5 ? 'auto' : 'none';
+    const shown = near + 1;
+    if (shown !== cIdx) { cIdx = shown; cnum.innerHTML = `${String(Math.min(shown, NI)).padStart(2, '0')} <small>/ ${String(NI).padStart(2, '0')}</small>`; }
+    cnum.parentElement.style.opacity = clamp((cS - 0.03) / 0.04) * clamp((0.95 - cS) / 0.03);
+  }
+  requestAnimationFrame(campLoop);
+})();
+</script>
+</body>
+</html>
